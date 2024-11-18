@@ -1,35 +1,51 @@
-@import './base.css';
+@import 'fonts/roboto/stylesheet.css';
 
-#app {
-  max-width: 1280px;
-  margin: 0 auto;
-  padding: 2rem;
-  font-weight: normal;
+* {
+    --merchant: 'Merchant';
+    --sfpro: 'SF Pro Display';
+    --roboto: 'Roboto';
+    --text-color: #333333;
+    --bg-color: #ffffff;
+    --shape-color: #FFE691;
 }
-
-a,
-.green {
-  text-decoration: none;
-  color: hsla(160, 100%, 37%, 1);
-  transition: 0.4s;
-  padding: 3px;
+html, body {
+    background: var(--bg-color);
+    box-sizing: border-box;
 }
-
-@media (hover: hover) {
-  a:hover {
-    background-color: hsla(160, 100%, 37%, 0.2);
-  }
+h1, h2, h3, h4, h5, h6, p, span, a {
+    line-height: 120%;
+    color: var(--text-color);
+    margin: 0;
+    font-family: 'Roboto', serif;
 }
-
-@media (min-width: 1024px) {
-  body {
-    display: flex;
-    place-items: center;
-  }
-
-  #app {
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    padding: 0 2rem;
-  }
+h1 {
+    font-size: 56px;
+    font-weight: 900;
+}
+h2 {
+    font-size: 64px;
+    font-weight: 900;
+}
+h3 {
+    font-size: 40px;
+    font-weight: 900;
+}
+h4 {
+    font-size: 24px;
+    font-weight: 900;
+}
+h5 {
+    font-size: 20px;
+    font-weight: 900;
+}
+h6 {
+    font-size: 18px;
+    font-weight: normal;
+}
+p {
+    font-size: 16px;
+    font-weight: normal;
+}
+a {
+    text-decoration: none;
 }
