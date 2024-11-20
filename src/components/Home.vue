@@ -86,6 +86,7 @@
       </div>
     </div>
   </div>
+  <Services></Services>
 </template>
 
 <script>
@@ -93,8 +94,9 @@ import Header from "@/components/ui_components/Header.vue";
 import BlacButton from "@/components/ui_components/BlacButton.vue";
 import WhiteButton from "@/components/ui_components/WhiteButton.vue";
 import Video from "@/components/ui_components/Video.vue";
+import Services from "@/components/ui_components/Services.vue";
 export default {
-  components: {Header, BlacButton, WhiteButton, Video},
+  components: {Header, BlacButton, WhiteButton, Video, Services},
   data() {
     return {
 
