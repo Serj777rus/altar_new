@@ -40,11 +40,11 @@ h5 {
 }
 h6 {
     font-size: 18px;
-    font-weight: normal;
+    font-weight: 300;
 }
 p {
     font-size: 16px;
-    font-weight: normal;
+    font-weight: 300;
 }
 a {
     text-decoration: none;

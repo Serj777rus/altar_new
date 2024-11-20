@@ -1,0 +1,286 @@
+<template>
+  <Header></Header>
+  <div class="hero">
+    <div class="hero_main">
+      <div class="hero_content">
+        <div class="hero_left_side">
+          <h1>Get legally married online in US</h1>
+          <h6>We've helped thousands of couples all around the world get their legal US marriage certificate available in 50 states of us and 123 countries.</h6>
+          <div class="hero_btns">
+            <BlacButton><slot>Get married</slot></BlacButton>
+            <WhiteButton><slot>Contact Us</slot></WhiteButton>
+          </div>
+          <div class="google_reviews">
+            <img src="@/assets/images/Google-Reviews-transparent-2%201.png" alt="Google Reviews transparent">
+            <h4>Exellent 4.9 out of 5</h4>
+          </div>
+        </div>
+        <div class="hero_right_side">
+          <img src="@/assets/images/hero_image.png" alt="logo">
+        </div>
+      </div>
+      <div class="hero_utp">
+        <div class="utp">
+          <p>100% online</p>
+        </div>
+        <div class="utp">
+          <p>24/7 customer support</p>
+        </div>
+        <div class="utp">
+          <p>Including weekend fast</p>
+        </div>
+        <div class="utp">
+          <p>Easy and affordable</p>
+        </div>
+      </div>
+    </div>
+  </div>
+  <Video></Video>
+  <div class="second_block">
+    <div class="second_block_main">
+      <div class="second_block_left">
+        <div class="second_left_text">
+          <h3>Experience the Magic of Online Weddings, Anytime, Anywhere!</h3>
+          <h6>Celebrate your love story with our seamless online wedding ceremonies. Enjoy a personalized experience that connects you and your loved ones, no matter the distance.</h6>
+        </div>
+        <div class="second_left_shape">
+          <div class="shape">
+            <img src="@/assets/images/icon_why_.png" alt="icon">
+            <h5>Why Online?</h5>
+            <p>Convenience, flexibility, and a unique way to say 'I do' together.</p>
+          </div>
+          <div class="shape">
+            <img src="@/assets/images/icon_promise.png" alt="icon">
+            <h5>Our Promise</h5>
+            <p>Creating unforgettable moments with love and joy, wherever you are.</p>
+          </div>
+        </div>
+      </div>
+      <div class="second_block_right">
+        <img src="@/assets/images/photo_change.png" alt="photo">
+      </div>
+    </div>
+  </div>
+  <div class="third_block">
+    <div class="third_block_main">
+      <h3>Experience Unforgettable Online Wedding Ceremonies Tailored Just for You</h3>
+      <div class="third_block_shapes">
+        <div class="third_shape">
+          <img src="@/assets/images/icon_wedding.png" alt="icon">
+          <h4>Crafting Beautiful Moments with Our Unique Virtual Wedding Services</h4>
+          <p>Our services are designed to create a memorable and personalized online wedding experience.</p>
+          <div class="third_link"><p>Learn More</p><img src="@/assets/images/chevron-right.svg"></div>
+        </div>
+        <div class="third_shape">
+          <img src="@/assets/images/icon_docs.png" alt="icon">
+          <h4>Crafting Beautiful Moments with Our Unique Virtual Wedding Services</h4>
+          <p>Our services are designed to create a memorable and personalized online wedding experience.</p>
+          <div class="third_link"><p>Sign Up</p><img src="@/assets/images/chevron-right.svg"></div>
+        </div>
+        <div class="third_shape">
+          <img src="@/assets/images/icon_steps.png" alt="icon">
+          <h4>Crafting Beautiful Moments with Our Unique Virtual Wedding Services</h4>
+          <p>Our services are designed to create a memorable and personalized online wedding experience.</p>
+          <div class="third_link"><p>Get Started</p><img src="@/assets/images/chevron-right.svg"></div>
+        </div>
+      </div>
+    </div>
+  </div>
+</template>
+
+<script>
+import Header from "@/components/ui_components/Header.vue";
+import BlacButton from "@/components/ui_components/BlacButton.vue";
+import WhiteButton from "@/components/ui_components/WhiteButton.vue";
+import Video from "@/components/ui_components/Video.vue";
+export default {
+  components: {Header, BlacButton, WhiteButton, Video},
+  data() {
+    return {
+
+    }
+  }
+}
+</script>
+
+<style scoped>
+.hero {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  box-sizing: border-box;
+  padding: 80px 0;
+}
+.hero_main {
+  width: 1280px;
+  display: flex;
+  flex-direction: column;
+  gap: 40px;
+}
+.hero_content {
+  width: 100%;
+  display: flex;
+  flex-direction: row;
+  gap: 40px;
+}
+.hero_left_side {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  gap: 32px;
+}
+.hero_btns {
+  display: flex;
+  flex-direction: row;
+  gap: 16px;
+}
+.google_reviews {
+  display: flex;
+  flex-direction: row;
+  gap: 20px;
+  align-items: center;
+}
+.google_reviews img {
+  height: 66px;
+  object-fit: contain;
+}
+.google_reviews h4 {
+  font-weight: 300;
+}
+.hero_right_side {
+  width: 100%;
+}
+.hero_right_side img {
+  width: 100%;
+}
+.hero_utp {
+  width: 100%;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  gap: 16px;
+}
+.utp {
+  box-sizing: border-box;
+  padding: 8px 18px;
+  background: var(--shape-color);
+  border-radius: 16px;
+}
+.second_block {
+  width: 100%;
+  display: flex;
+  padding: 80px 0;
+  box-sizing: border-box;
+  justify-content: center;
+  align-items: center;
+}
+.second_block_main {
+  width: 1280px;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  gap: 80px;
+}
+.second_block_left {
+  width: 100%;
+  gap: 32px;
+  display: flex;
+  flex-direction: column;
+}
+.second_left_text {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
+}
+.second_left_shape {
+  width: 100%;
+  display: flex;
+  flex-direction: row;
+  gap: 24px;
+}
+.shape {
+  box-sizing: border-box;
+  padding: 12px;
+  gap: 16px;
+  display: flex;
+  flex-direction: column;
+  border-radius: 12px;
+  background: var(--shape-color);
+  border: 2px solid #fff;
+  width: 100%;
+  box-shadow: 0 4px 12px 0 rgba(0, 0, 0, 0.2);
+}
+.shape img {
+  width: 64px;
+}
+.second_block_right {
+  width: 100%;
+  display: flex;
+}
+.second_block_right img {
+  width: 100%;
+  object-fit: contain;
+}
+.third_block {
+  width: 100%;
+  display: flex;
+  box-sizing: border-box;
+  padding: 80px 0;
+  justify-content: center;
+  align-items: center;
+}
+.third_block_main {
+  width: 1280px;
+  display: flex;
+  flex-direction: column;
+  gap: 80px;
+  align-items: center;
+}
+.third_block_main h3 {
+  text-align: center;
+  width:70%;
+}
+.third_block_shapes {
+  width: 100%;
+  display: flex;
+  flex-direction: row;
+  gap: 48px;
+}
+.third_shape {
+  width: 100%;
+  box-sizing: border-box;
+  padding: 12px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  border-radius: 12px;
+  background: var(--shape-color);
+  border: 2px solid #fff;
+  box-shadow: 0 4px 12px 0 rgba(0, 0, 0, 0.2);
+  text-align: center;
+  gap: 24px;
+}
+.third_shape img {
+  width: 64px;
+}
+.third_link {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  gap: 0;
+  transition: gap 300ms ease-in-out;
+  box-sizing: border-box;
+  padding: 4px 4px 4px 12px;
+  border: 1px solid #333;
+  border-radius: 50px;
+}
+.third_link img {
+  width: 24px;
+}
+.third_link:hover {
+  gap: 24px;
+}
+</style>
