@@ -20,6 +20,7 @@
       <div class="tabs">
         <div class="tab" v-for="tab in services" :key="tab.id" @click="isActive = tab.id">
           <img :src="`${mediaUrl}${tab.moreimages.url}` || `${mediaUrl}${tab.image.url}`" alt="image">
+          <p>{{ tab.Service }}</p>
         </div>
       </div>
     </div>
@@ -150,11 +151,24 @@ export default {
 }
 .tab {
   height: 96px;
+  position: relative;
 }
 .tab img {
   height: 100%;
   aspect-ratio: 1/1;
   object-fit: cover;
   border-radius: 8px;
+  filter: brightness(60%);
+  cursor: pointer;
+}
+.tab p {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 100%;
+  transform: translate(-50%, -50%);
+  color: #fff;
+  text-align: center;
+  cursor: pointer;
 }
 </style>

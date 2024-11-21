@@ -87,6 +87,35 @@
     </div>
   </div>
   <Services></Services>
+  <Steps></Steps>
+  <div class="exellence_block">
+    <div class="exellence_main">
+      <div class="left_side_exellence">
+        <p>Excellence</p>
+        <h3>Your Dream Wedding, Effortlessly Online</h3>
+        <h6>Our online wedding ceremonies bring your vision to life, no matter where you are. Experience the joy of saying 'I do' in a modern, personalized way.</h6>
+        <div class="left_side_exellence_utps">
+          <div class="left_side_exellence_utps_utp">
+            <img src="@/assets/images/Relume.png" alt="icon">
+            <p>Convenience: Celebrate from anywhere, anytime with ease.</p>
+          </div>
+          <div class="left_side_exellence_utps_utp">
+            <img src="@/assets/images/Relume.png" alt="icon">
+            <p>Customization: Tailor your ceremony to reflect your love.</p>
+          </div>
+          <div class="left_side_exellence_utps_utp">
+            <img src="@/assets/images/Relume.png" alt="icon">
+            <p>Affordability: Enjoy a beautiful ceremony without breaking the bank.</p>
+          </div>
+        </div>
+        <WhiteButton><slot>Sign Up</slot></WhiteButton>
+      </div>
+      <div class="right_side_exellence">
+        <img src="@/assets/images/Placeholder%20Image.png" alt="icon">
+      </div>
+    </div>
+  </div>
+  <TableBlock></TableBlock>
 </template>
 
 <script>
@@ -95,8 +124,10 @@ import BlacButton from "@/components/ui_components/BlacButton.vue";
 import WhiteButton from "@/components/ui_components/WhiteButton.vue";
 import Video from "@/components/ui_components/Video.vue";
 import Services from "@/components/ui_components/Services.vue";
+import Steps from "@/components/ui_components/Steps.vue";
+import TableBlock from "@/components/ui_components/TableBlock.vue";
 export default {
-  components: {Header, BlacButton, WhiteButton, Video, Services},
+  components: {Header, BlacButton, WhiteButton, Video, Services, Steps, TableBlock},
   data() {
     return {
 
@@ -284,5 +315,50 @@ export default {
 }
 .third_link:hover {
   gap: 24px;
+}
+.exellence_block {
+  width: 100%;
+  box-sizing: border-box;
+  padding: 80px 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.exellence_main {
+  width: 1280px;
+  display: flex;
+  flex-direction: row;
+  gap: 80px;
+  align-items: center;
+}
+.left_side_exellence {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  gap: 32px;
+  align-items: start;
+}
+.left_side_exellence_utps {
+  display: flex;
+  width: 100%;
+  flex-direction: column;
+  gap: 16px;
+}
+.left_side_exellence_utps_utp {
+  width: 100%;
+  display: flex;
+  flex-direction: row;
+  gap: 16px;
+}
+.left_side_exellence_utps_utp img {
+  width: 16px;
+  object-fit: contain;
+}
+.right_side_exellence {
+  width: 100%;
+}
+.right_side_exellence img {
+  width: 100%;
+  object-fit: contain;
 }
 </style>
