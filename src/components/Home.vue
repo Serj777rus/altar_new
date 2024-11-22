@@ -117,6 +117,71 @@
   </div>
   <TableBlock></TableBlock>
   <Cases></Cases>
+  <div class="price">
+    <div class="price_main">
+      <div class="price_heead">
+        <h3>Pricing Plans</h3>
+        <h6>Choose the perfect plan for your wedding ceremony.</h6>
+      </div>
+      <div class="price_block">
+        <div class="left_price_block">
+          <div class="price_shape">
+            <div class="general_price_head">
+              <h5>The Base Package</h5>
+              <h2>$500</h2>
+            </div>
+            <div class="price_line"></div>
+            <div class="general_price_includes">
+              <p>includes:</p>
+              <ul>
+                <li>100% Satisfaction Guarantee</li>
+                <li>Unlimited consultation leading up to your day</li>
+                <li>One Digital Copy of Marriage certificate</li>
+                <li>Wedding Ceremony with Experienced Officiant</li>
+                <li>One Hardcopy of Marriage Certificate</li>
+                <li>Video Recording of Your Ceremony</li>
+                <li>Cloud Storage of Your Video Recording</li>
+                <li>Government Processing Fee is included</li>
+                <li>2 Witnesses</li>
+                <li>Get a Full Refund if You Change Your Mind</li>
+              </ul>
+            </div>
+            <BlacButton><slot>Get Started</slot></BlacButton>
+          </div>
+        </div>
+        <div class="right_price_block">
+          <div class="price_shape">
+            <div class="general_price_head">
+              <h5>Add-Ons</h5>
+              <h2>$50</h2>
+            </div>
+            <div class="price_line"></div>
+            <div class="general_price_includes">
+              <p>includes:</p>
+              <ul>
+                <li>100% Satisfaction Guarantee</li>
+                <li>Unlimited consultation leading up to your day</li>
+              </ul>
+            </div>
+          </div>
+          <div class="price_shape">
+            <div class="general_price_head">
+              <h5>Add-Ons</h5>
+              <h2>$50</h2>
+            </div>
+            <div class="price_line"></div>
+            <div class="general_price_includes">
+              <p>includes:</p>
+              <ul>
+                <li>100% Satisfaction Guarantee</li>
+                <li>Unlimited consultation leading up to your day</li>
+              </ul>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
 </template>
 
 <script>
@@ -362,5 +427,86 @@ export default {
 .right_side_exellence img {
   width: 100%;
   object-fit: contain;
+}
+.price {
+  width: 100%;
+  display: flex;
+  box-sizing: border-box;
+  padding: 80px 0;
+  justify-content: center;
+  align-items: center;
+}
+.price_main {
+  width: 1280px;
+  display: flex;
+  flex-direction: column;
+  gap: 40px;
+  align-items: center;
+}
+.price_heead {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
+  align-items: center;
+}
+.price_block {
+  width: 1024px;
+  display: flex;
+  flex-direction: row;
+  gap: 48px;
+}
+.left_price_block {
+  width: 100%;
+  display: flex;
+}
+.price_shape {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  gap: 32px;
+  box-sizing: border-box;
+  padding: 32px;
+  border: 2px solid #fff;
+  border-radius: 32px;
+  box-shadow: 0px 4px 12px 0 rgba(0, 0, 0, 0.2);
+  background: var(--shape-color);
+}
+.general_price_head {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+.price_line {
+  width: 100%;
+  height: 1px;
+  background: var(--text-color);
+}
+.general_price_includes {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+.general_price_includes ul {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+  list-style-type: none;
+  padding-left: 12px;
+}
+.general_price_includes ul li {
+  background-image: url("@/assets/images/Check.png");
+  background-repeat: no-repeat;
+  background-position: 0 center;
+  background-size: 24px 24px;
+  padding-left: 32px;
+}
+.right_price_block {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  gap: 32px;
 }
 </style>

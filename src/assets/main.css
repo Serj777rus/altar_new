@@ -12,7 +12,7 @@ html, body {
     background: var(--bg-color);
     box-sizing: border-box;
 }
-h1, h2, h3, h4, h5, h6, p, span, a {
+h1, h2, h3, h4, h5, h6, p, span, a, ul, li, ol, ul {
     line-height: 120%;
     color: var(--text-color);
     margin: 0;
@@ -48,4 +48,8 @@ p {
 }
 a {
     text-decoration: none;
+}
+ul, ol, li {
+    font-size: 16px;
+    font-weight: 300;
 }
