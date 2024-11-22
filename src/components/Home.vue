@@ -116,6 +116,7 @@
     </div>
   </div>
   <TableBlock></TableBlock>
+  <Cases></Cases>
 </template>
 
 <script>
@@ -126,8 +127,9 @@ import Video from "@/components/ui_components/Video.vue";
 import Services from "@/components/ui_components/Services.vue";
 import Steps from "@/components/ui_components/Steps.vue";
 import TableBlock from "@/components/ui_components/TableBlock.vue";
+import Cases from "@/components/ui_components/Cases.vue";
 export default {
-  components: {Header, BlacButton, WhiteButton, Video, Services, Steps, TableBlock},
+  components: {Header, BlacButton, WhiteButton, Video, Services, Steps, TableBlock, Cases},
   data() {
     return {
 
