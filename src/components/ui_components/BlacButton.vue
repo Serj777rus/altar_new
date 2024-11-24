@@ -20,6 +20,7 @@ button {
   font-size: 16px;
   color: #fff;
   transition: all 0.3s;
+  cursor: pointer;
 }
 button:hover {
   background: #535353;

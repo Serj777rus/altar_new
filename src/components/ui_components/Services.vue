@@ -45,6 +45,7 @@ export default {
         const response = await axios.get('http://154.12.254.79/api/forwhos?populate=*')
         if (response.data.data !== null) {
           this.services = response.data.data;
+          localStorage.setItem('services', JSON.stringify(this.services));
         }
       } catch(error) {
         console.log(error)

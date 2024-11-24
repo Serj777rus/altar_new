@@ -224,7 +224,7 @@ export default {
 .quest h5 {
   font-weight: 400;
 }
-.quest:nth-last-child(1) {
+.quest:nth-child(7) {
   border-bottom: none;
 }
 .altar_column {

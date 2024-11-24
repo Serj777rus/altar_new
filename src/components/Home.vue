@@ -182,6 +182,33 @@
       </div>
     </div>
   </div>
+  <div class="faq">
+    <div class="faq_main">
+      <div class="faq_header">
+        <img src="@/assets/images/FAQ.png" alt="icon">
+        <h3>FAQs</h3>
+        <h6>Find answers to your most pressing questions about our online wedding ceremonies.</h6>
+      </div>
+      <div class="quests_answers">
+        <div class="quest_answ" v-for="quest in faq" :key="quest.id" @click="changeFaq(quest.id)">
+          <div class="quest">
+            <h6>{{ quest.question }}</h6>
+            <h6 :class="{activePlus: faqItem === quest.id}">+</h6>
+          </div>
+          <div class="answer" :class="{activeFaq: faqItem === quest.id}">
+            <p>{{ quest.answer }}</p>
+          </div>
+        </div>
+      </div>
+      <div class="text_btn">
+        <h4>Still have questions?</h4>
+        <h6>We're here to help!</h6>
+        <WhiteButton><slot>Contact</slot></WhiteButton>
+      </div>
+    </div>
+  </div>
+  <ScrollText></ScrollText>
+  <Footer></Footer>
 </template>
 
 <script>
@@ -193,11 +220,76 @@ import Services from "@/components/ui_components/Services.vue";
 import Steps from "@/components/ui_components/Steps.vue";
 import TableBlock from "@/components/ui_components/TableBlock.vue";
 import Cases from "@/components/ui_components/Cases.vue";
+import ScrollText from "@/components/ui_components/ScrollText.vue";
+import Footer from "@/components/ui_components/Footer.vue";
 export default {
-  components: {Header, BlacButton, WhiteButton, Video, Services, Steps, TableBlock, Cases},
+  components: {Header, BlacButton, WhiteButton, Video, Services, Steps, TableBlock, Cases, ScrollText, Footer},
   data() {
     return {
-
+      faq: [
+        {
+          id: 1,
+          question: "What is Altar?",
+          answer: 'Altar is the pioneer in online marriage, making it possible for couples worldwide to get legally married anytime, 24/7. We are on a mission to disrupt the traditional wedding industry—bringing the aisle online for 21st-century couples, regardless of their nationality, sexuality, or physical location.'
+        },
+        {
+          id: 2,
+          question: 'What is online wedding?',
+          answer: 'An online wedding actually means a wedding held virtually through online means. \n' +
+              'The wedding couples will go through a web-conference wedding ceremony (such as Zoom), which will be officiated by a competent authority to ensure every requirement of the marriage has been met. \n' +
+              'The marriage certificate will be signed digitally. Digital signatures are as legally binding as paper signatures. \n' +
+              'After the online wedding ceremony, you will receive one digital and one hardcopy of the Marriage Certificate as your proof of the marriage. \n'
+        },
+        {
+          id: 3,
+          question: 'Is online marriage legal?',
+          answer: 'Yes, it is! When the pandemic hit our lives in 2020, online marriage became fully legal in the US through the state of Utah.\n' +
+              '\n' +
+              'To ensure every online wedding is legally recognized, we follow three key steps to complete the registration process:\n' +
+              '1. Obtain an official marriage license for the couple.\n' +
+              '2. Conduct a valid wedding ceremony in accordance with legal requirements.\n' +
+              '3. Register the marriage with the appropriate authorities for official documentation.\n',
+        },
+        {
+          id: 4,
+          question: 'What is requirements of an online marriage?',
+          answer: 'The good news is that the requirements of an online virtual marriage are minimal. \n' +
+              'Any consenting adult who meets the following criteria can get married online:\n' +
+              '\n' +
+              '  1.  18 years of age or older,\n' +
+              '  2.  Single and not currently married, and\n' +
+              '  3.  Has not been divorced in the past 60 days.\n' +
+              '\n' +
+              'All that’s required is a valid government ID, a webcam, and a reliable WIFI\n'
+        },
+        {
+          id: 5,
+          question: 'Do I need to be US citizen?',
+          answer: 'Not at all! Couples of any nationality can legally get married in the United States.\n' +
+              '\n' +
+              'International couples may also want to obtain an apostille or authentication for their marriage certificate. An apostille is a special certification issued by the Secretary of State or the Office of the Lieutenant Governor, allowing a legal document issued in one country to be recognized in another.\n'
+        },
+        {
+          id: 6,
+          question: 'My partner and I are staying apart in different countries. Can we still get married online legally?',
+          answer: 'Yes! We’ve successfully and legally married thousands of couples where one partner is in one country and the other is thousands of miles away!\n'
+        },
+        {
+          id: 7,
+          question: 'What’s your difference from others?',
+          answer: 'We are online marriage portal is the only one of its kind in the world. We can provide 2 witnesses with no charge, government marriage license is included in the price, etc. Our couple loves us and you will too.'
+        }
+      ],
+      faqItem: null
+    }
+  },
+  methods: {
+    changeFaq(id) {
+      if (this.faqItem === id) {
+        this.faqItem = null
+      } else {
+        this.faqItem = id
+      }
     }
   }
 }
@@ -376,6 +468,7 @@ export default {
   padding: 4px 4px 4px 12px;
   border: 1px solid #333;
   border-radius: 50px;
+  cursor: pointer;
 }
 .third_link img {
   width: 24px;
@@ -508,5 +601,79 @@ export default {
   display: flex;
   flex-direction: column;
   gap: 32px;
+}
+.faq {
+  width: 100%;
+  display: flex;
+  box-sizing: border-box;
+  padding: 80px 0;
+  justify-content: center;
+  align-items: center;
+}
+.faq_main {
+  width: 1280px;
+  display: flex;
+  flex-direction: column;
+  gap: 40px;
+  align-items: center;
+}
+.faq_header {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
+  align-items: center;
+}
+.quests_answers {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+.quest_answ {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  gap: 0;
+  border: 1px solid #333333;
+  overflow: hidden;
+}
+.quest {
+  box-sizing: border-box;
+  padding: 20px 24px;
+  display: flex;
+  width: 100%;
+  justify-content: space-between;
+  align-items: center;
+  flex-direction: row;
+  cursor: pointer;
+}
+.quest h6:nth-child(1) {
+  font-weight: 700;
+}
+.quest h6:nth-child(2) {
+  transform: rotate(0deg);
+  transition: 300ms ease;
+}
+.answer {
+  box-sizing: border-box;
+  padding: 0 24px 0 24px;
+  display: flex;
+  max-height: 1px;
+  transition: all 300ms ease-in-out;
+}
+.activeFaq {
+  max-height: 1000px;
+  padding: 0 24px 20px 24px;
+}
+.activePlus {
+  transform: rotate(-45deg) !important;
+}
+.text_btn {
+  width: 100%;
+  align-items: start;
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
 }
 </style>

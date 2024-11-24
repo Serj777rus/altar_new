@@ -75,7 +75,7 @@ export default {
       if (this.step > 3) {
         this.step = 1
       }
-    }, 10000)
+    }, 30000)
   },
   watch: {
     step(newValue) {
@@ -133,6 +133,7 @@ export default {
   line-height: 50%;
   color: white;
   background: var(--shape-color);
+  cursor: pointer;
 }
 .step:nth-child(4) {
   top: 100%;

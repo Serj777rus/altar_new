@@ -21,6 +21,7 @@ button {
   color: var(--text-color);
   transition: all 0.3s;
   box-shadow: none;
+  cursor: pointer;
 }
 button:hover {
   box-shadow: 0 2px 6px 0 rgba(0, 0, 0, 0.2);
