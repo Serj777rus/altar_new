@@ -38,7 +38,7 @@ export default {
       question: [
         {
           id: 0,
-          quest: 'Any Text'
+          quest: ''
         },
         {
           id: 1,
@@ -182,23 +182,6 @@ export default {
   gap: 12px;
   align-items: center;
 }
-.tables_names {
-  width: 100%;
-  display: flex;
-  flex-direction: row;
-  margin-top: 40px;
-}
-.names {
-  width: 100%;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  font-size: 24px;
-  margin: 0;
-  font-weight: 700;
-  color: #333;
-  line-height: 50%;
-}
 .table_block {
   width: 100%;
   display: flex;
@@ -213,6 +196,7 @@ export default {
 }
 .quest {
   width: 100%;
+  height: 96px;
   display: flex;
   justify-content: center;
   align-items: center;
@@ -239,6 +223,7 @@ export default {
 }
 .altar_answ {
   width: 100%;
+  height: 96px;
   display: flex;
   justify-content: center;
   align-items: center;
@@ -254,5 +239,88 @@ export default {
 }
 .altar_answ:nth-child(5) h5 {
   color: green;
+}
+@media all and (max-width: 550px) {
+  .table {
+    width: 100%;
+    display: flex;
+    box-sizing: border-box;
+    padding: 40px 10px;
+    justify-content: center;
+    align-items: center;
+  }
+  .table_main {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+  .table_zglvk {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+    align-items: center;
+  }
+  .table_block {
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+    box-sizing: border-box;
+    margin-top: 24px;
+  }
+  .question_column {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+  }
+  .quest {
+    width: 100%;
+    height: 64px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    box-sizing: border-box;
+    padding: 8px;
+    border-bottom: 1px solid #a5a5a5;
+  }
+  .quest h5 {
+    font-weight: 400;
+    font-size: 14px;
+  }
+  .quest:nth-child(7) {
+    border-bottom: none;
+  }
+  .altar_column {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    border: 2px solid var(--shape-color);
+    border-radius: 12px;
+    box-sizing: border-box;
+    background: rgba(255, 230, 145, 0.4);
+    transform: translateY(-2px);
+  }
+  .altar_answ {
+    width: 100%;
+    height: 64px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    box-sizing: border-box;
+    padding: 8px;
+    border-bottom: 1px solid #a5a5a5;
+  }
+  .altar_answ h5 {
+    font-weight: 400;
+    font-size: 14px;
+  }
+  .altar_answ:nth-child(7) {
+    border-bottom: none;
+  }
+  .altar_answ:nth-child(5) h5 {
+    color: green;
+  }
 }
 </style>

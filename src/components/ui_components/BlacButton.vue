@@ -13,14 +13,16 @@ export default {
 <style scoped>
 button {
   box-sizing: border-box;
-  padding: 12px 24px;
+  padding: 8px 20px;
   border-radius: 50px;
   border: none;
   background: var(--text-color);
-  font-size: 16px;
+  font-size: 12px;
   color: #fff;
   transition: all 0.3s;
   cursor: pointer;
+  font-family: 'Roboto', serif;
+  font-weight: 300;
 }
 button:hover {
   background: #535353;

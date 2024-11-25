@@ -5,7 +5,7 @@
         <img src="@/assets/images/Wedding_Rings_Gold_PNG_Clip_Art-2499%201.png" alt="logo">
         <h2>ALTAR</h2>
       </div>
-      <BlacButton><slot>Contact US</slot></BlacButton>
+      <BlacButton @click="$emit('open-pop', true)"><slot>Contact US</slot></BlacButton>
     </div>
   </div>
 </template>
@@ -45,5 +45,11 @@ export default {
 .header_logo h2 {
   font-size: 32px;
   color: var(--shape-color);
+}
+@media all and (max-width: 550px) {
+  .header {
+    box-sizing: border-box;
+    padding: 0 10px;
+  }
 }
 </style>

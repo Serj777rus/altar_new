@@ -83,4 +83,47 @@ export default {
   width: 300px;
   border-radius: 12px;
 }
+@media all and (max-width: 550px) {
+  .video-container {
+    display: flex;
+    width: 100%;
+    justify-content: center;
+    align-items: center;
+    margin: 40px 10px;
+  }
+  .video_main {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    gap: 40px;
+    align-items: center;
+  }
+  .zagolovok {
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+    align-items: center;
+  }
+  .zagolovok h3 {
+    text-align: center;
+  }
+  .videos {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    justify-content: start;
+    align-items: center;
+    gap: 40px;
+  }
+  .video {
+    width: 300px;
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+  }
+  .video video {
+    width: 300px;
+    border-radius: 12px;
+  }
+}
 </style>

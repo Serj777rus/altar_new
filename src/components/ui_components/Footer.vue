@@ -185,4 +185,120 @@ export default {
 .socials img {
   cursor: pointer;
 }
+@media all and (max-width: 550px) {
+  .footer {
+    width: 100%;
+    display: flex;
+    box-sizing: border-box;
+    padding: 40px 10px;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    gap: 32px;
+  }
+  .footer_main {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    gap: 32px;
+    box-sizing: border-box;
+    padding: 16px;
+    background: var(--shape-color);
+  }
+  .links_footer {
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+    gap: 12px;
+    align-items: start;
+  }
+  .links_footer img {
+    object-fit: contain;
+    width: 100%;
+    margin-right: 40px;
+    display: none;
+  }
+  .links_block {
+    width: 100%;
+    box-sizing: border-box;
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+    white-space: nowrap;
+  }
+  .links {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    gap: 0;
+  }
+  .links_block h6 {
+    font-weight: 500;
+  }
+  .links p {
+    box-sizing: border-box;
+    padding: 8px 0;
+    font-size: 14px;
+    text-decoration: none;
+    transition: all 0.5s ease-in-out;
+    cursor: pointer;
+  }
+  .links p:hover {
+    text-decoration: underline;
+  }
+  .news_seller_footer {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+  }
+  .news_seller_footer h6 {
+    font-weight: 500;
+  }
+  .news_seller_footer form {
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+    gap: 16px;
+    align-items: center;
+  }
+  .news_seller_footer form input {
+    box-sizing: border-box;
+    padding: 12px;
+    border: 1px solid var(--text-color);
+    border-radius: 32px;
+    background: transparent;
+    width: 100%;
+  }
+  .news_seller_footer p {
+    font-size: 12px;
+  }
+  .privacy_socials {
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+  }
+  .terms {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+    align-items: start;
+  }
+  .socials {
+    display: flex;
+    flex-direction: row;
+    gap: 8px;
+    align-items: start;
+    justify-self: end;
+  }
+  .terms p {
+    text-decoration: underline;
+    cursor: pointer;
+  }
+  .socials img {
+    cursor: pointer;
+  }
+}
 </style>

@@ -95,36 +95,53 @@ export default {
 .activeletter {
   color: var(--shape-color);
 }
-@media all and (max-width: 430px) {
+@media all and (max-width: 550px) {
   .footer_main {
     width: 100%;
-    display: flex;
+    display: none;
     justify-content: center;
-    align-items: center;
-    padding: 80px 12px;
-    background: #F8FBFF;
+    /* align-items: center; */
+    padding: 40px 10px
   }
+
   .footer_div {
+    width: 100%;
     display: flex;
     flex-direction: column;
-    gap: 40px;
+    gap: 24px;
     align-items: center;
   }
+
   .footer_text {
-    gap: 16px;
+    width: 100%;
     display: flex;
-    flex-direction: column;
-    align-items: center;
+    flex-direction: row;
+    flex-wrap: wrap;
     margin-bottom: 24px;
+    position: sticky;
+    top: 40px;
+    justify-content: space-between;
+    row-gap: 4px;
+    align-items: center;
+    box-sizing: border-box;
+    border-radius: 12px;
+    box-shadow: 0 8px 16px 2px rgba(0, 0, 0, .2);
+    background: #fff;
+    padding: 24px;
+    /* background: rgb(247, 247, 247); */
   }
-  .footer_text p {
+
+  .letter {
+    line-height: 100%;
     font-size: 36px;
-    font-weight: 700;
-    text-align: center;
-  }.footer_text h5 {
-     font-size: 18px;
-     font-weight: 400;
-     text-align: center;
-   }
+    font-weight: 500;
+    /* color: rgba(170, 90, 109, .2); */
+    color: rgba(51, 51, 51, 0.3);
+    transition: all .3s ease;
+  }
+
+  .activeletter {
+    color: var(--shape-color);
+  }
 }
 </style>

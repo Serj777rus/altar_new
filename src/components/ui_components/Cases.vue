@@ -204,4 +204,137 @@ export default {
   background: var(--shape-color);
   cursor: pointer;
 }
+@media all and (max-width: 550px) {
+  .cases {
+    width: 100%;
+    display: flex;
+    box-sizing: border-box;
+    padding: 40px 10px;
+    justify-content: center;
+    align-items: center;
+  }
+  .cases_main {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    gap: 40px;
+    align-items: center;
+  }
+  .cases_main h3 {
+    text-align: center;
+  }
+  .number_block {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+  }
+  .number {
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    gap: 16px;
+    background: var(--shape-color);
+    border-radius: 12px;
+    border: 2px solid #fff;
+    box-shadow: 0 4px 12px 0 rgba(0, 0, 0, 0.2);
+    box-sizing: border-box;
+    padding: 12px;
+  }
+  .number img {
+    width: 64px;
+  }
+  .cost_number {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    gap: -12px;
+    align-items: center;
+  }
+  .cases_in_picture {
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+    overflow: hidden;
+    position: relative;
+  }
+  .changed_block {
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+    transform: translateX(0);
+    transition: transform 0.5s ease-in-out;
+  }
+  .cases_in_picture_case {
+    width: 100%;
+    position: relative;
+  }
+  .cases_in_picture_case img {
+    width: calc(100vw - 20px);
+    object-fit: cover;
+    border-radius: 16px;
+    filter: brightness(60%);
+  }
+  .text_case {
+    display: flex;
+    flex-direction: column;
+    gap: 4px;
+    position: absolute;
+    align-items: end;
+  }
+  .text_case:nth-child(2) {
+    width: 95%;
+    bottom: 15%;
+    left: 12px;
+    box-sizing: border-box;
+    padding: 8px;
+    border-radius: 16px;
+    background: rgba(255, 255, 255, 0.2);
+    backdrop-filter: blur(6px);
+  }
+  .text_case:nth-child(2) h3 {
+    font-size: 14px;
+    font-weight: 500;
+  }
+  .text_case:nth-child(3) {
+    top: 5%;
+    right: 12px;
+  }
+  .text_case:nth-child(3) h3 {
+    font-size: 20px;
+  }
+  .text_case:nth-child(4) h3 {
+    font-size: 20px;
+  }
+  .text_case:nth-child(4) {
+    top: 25%;
+    right: 12px;
+  }
+  .text_case h3, h6, h4, h2 {
+    color: #fff;
+  }
+  .cost_money {
+    color: #fff;
+  }
+  .cost_time {
+    color: #fff;
+  }
+  .tabs {
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+    gap: 8px;
+    position: absolute;
+    bottom: 5%;
+    left: 10%;
+  }
+  .tab {
+    width: 12px;
+    height: 12px;
+    border-radius: 50%;
+    background: var(--shape-color);
+    cursor: pointer;
+  }
+}
 </style>

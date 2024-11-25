@@ -1,5 +1,5 @@
 <template>
-  <Header></Header>
+  <Header @open-pop="PopUpActive = true"></Header>
   <div class="hero">
     <div class="hero_main">
       <div class="hero_content">
@@ -8,7 +8,7 @@
           <h6>We've helped thousands of couples all around the world get their legal US marriage certificate available in 50 states of us and 123 countries.</h6>
           <div class="hero_btns">
             <BlacButton><slot>Get married</slot></BlacButton>
-            <WhiteButton><slot>Contact Us</slot></WhiteButton>
+            <WhiteButton @click="PopUpActive = true"><slot>Contact Us</slot></WhiteButton>
           </div>
           <div class="google_reviews">
             <img src="@/assets/images/Google-Reviews-transparent-2%201.png" alt="Google Reviews transparent">
@@ -73,14 +73,14 @@
         </div>
         <div class="third_shape">
           <img src="@/assets/images/icon_docs.png" alt="icon">
-          <h4>Crafting Beautiful Moments with Our Unique Virtual Wedding Services</h4>
-          <p>Our services are designed to create a memorable and personalized online wedding experience.</p>
+          <h4>Comprehensive Packages to Suit Every Couple's Unique Wedding Vision</h4>
+          <p>From intimate elopements to grand virtual celebrations, we have you covered.</p>
           <div class="third_link"><p>Sign Up</p><img src="@/assets/images/chevron-right.svg"></div>
         </div>
         <div class="third_shape">
           <img src="@/assets/images/icon_steps.png" alt="icon">
-          <h4>Crafting Beautiful Moments with Our Unique Virtual Wedding Services</h4>
-          <p>Our services are designed to create a memorable and personalized online wedding experience.</p>
+          <h4>Step-by-Step Guidance for a Seamless Online Wedding Experience</h4>
+          <p>We walk you through every stage, ensuring your day is perfect.</p>
           <div class="third_link"><p>Get Started</p><img src="@/assets/images/chevron-right.svg"></div>
         </div>
       </div>
@@ -203,12 +203,13 @@
       <div class="text_btn">
         <h4>Still have questions?</h4>
         <h6>We're here to help!</h6>
-        <WhiteButton><slot>Contact</slot></WhiteButton>
+        <WhiteButton @click="PopUpActive = true"><slot>Contact</slot></WhiteButton>
       </div>
     </div>
   </div>
   <ScrollText></ScrollText>
   <Footer></Footer>
+  <PopUp :isActive="PopUpActive" @close-pop="closePop"></PopUp>
 </template>
 
 <script>
@@ -222,8 +223,9 @@ import TableBlock from "@/components/ui_components/TableBlock.vue";
 import Cases from "@/components/ui_components/Cases.vue";
 import ScrollText from "@/components/ui_components/ScrollText.vue";
 import Footer from "@/components/ui_components/Footer.vue";
+import PopUp from "@/components/ui_components/PopUp.vue";
 export default {
-  components: {Header, BlacButton, WhiteButton, Video, Services, Steps, TableBlock, Cases, ScrollText, Footer},
+  components: {Header, BlacButton, WhiteButton, Video, Services, Steps, TableBlock, Cases, ScrollText, Footer, PopUp},
   data() {
     return {
       faq: [
@@ -280,7 +282,8 @@ export default {
           answer: 'We are online marriage portal is the only one of its kind in the world. We can provide 2 witnesses with no charge, government marriage license is included in the price, etc. Our couple loves us and you will too.'
         }
       ],
-      faqItem: null
+      faqItem: null,
+      PopUpActive: false
     }
   },
   methods: {
@@ -290,6 +293,9 @@ export default {
       } else {
         this.faqItem = id
       }
+    },
+    closePop(value) {
+      this.PopUpActive = value
     }
   }
 }
@@ -562,7 +568,7 @@ export default {
   padding: 32px;
   border: 2px solid #fff;
   border-radius: 32px;
-  box-shadow: 0px 4px 12px 0 rgba(0, 0, 0, 0.2);
+  box-shadow: 0 4px 12px 0 rgba(0, 0, 0, 0.2);
   background: var(--shape-color);
 }
 .general_price_head {
@@ -675,5 +681,396 @@ export default {
   display: flex;
   flex-direction: column;
   gap: 16px;
+}
+@media all and (max-width: 550px) {
+  .hero {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    box-sizing: border-box;
+    padding: 40px 10px;
+  }
+  .hero_main {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    gap: 24px;
+  }
+  .hero_main h1 {
+    text-align: center;
+  }
+  .hero_content {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    gap: 0;
+  }
+  .hero_left_side {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 32px;
+  }
+  .hero_btns {
+    display: flex;
+    flex-direction: row;
+    gap: 16px;
+  }
+  .google_reviews {
+    display: flex;
+    flex-direction: row;
+    gap: 20px;
+    align-items: center;
+  }
+  .google_reviews img {
+    height: 66px;
+    object-fit: contain;
+  }
+  .google_reviews h4 {
+    font-weight: 300;
+  }
+  .hero_right_side {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+  .hero_right_side img {
+    width: 80%;
+  }
+  .hero_utp {
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    gap: 8px;
+    flex-wrap: wrap;
+  }
+  .utp {
+    box-sizing: border-box;
+    padding: 8px 18px;
+    background: var(--shape-color);
+    border-radius: 16px;
+  }
+  .second_block {
+    width: 100%;
+    display: flex;
+    padding: 40px 10px;
+    box-sizing: border-box;
+    justify-content: center;
+    align-items: center;
+  }
+  .second_block_main {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 32px;
+  }
+  .second_block_left {
+    width: 100%;
+    gap: 24px;
+    display: flex;
+    flex-direction: column;
+  }
+  .second_left_text {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+  }
+  .second_left_shape {
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+    gap: 16px;
+  }
+  .shape {
+    box-sizing: border-box;
+    padding: 12px;
+    gap: 16px;
+    display: flex;
+    flex-direction: column;
+    border-radius: 12px;
+    background: var(--shape-color);
+    border: 2px solid #fff;
+    width: 100%;
+    box-shadow: 0 4px 12px 0 rgba(0, 0, 0, 0.2);
+  }
+  .shape img {
+    width: 64px;
+  }
+  .second_block_right {
+    width: 100%;
+    display: flex;
+  }
+  .second_block_right img {
+    width: 100%;
+    object-fit: contain;
+  }
+  .third_block {
+    width: 100%;
+    display: flex;
+    box-sizing: border-box;
+    padding:40px 10px;
+    justify-content: center;
+    align-items: center;
+  }
+  .third_block_main {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    gap: 40px;
+    align-items: center;
+  }
+  .third_block_main h3 {
+    text-align: center;
+    width:100%;
+  }
+  .third_block_shapes {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+  }
+  .third_shape {
+    width: 100%;
+    box-sizing: border-box;
+    padding: 12px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    border-radius: 12px;
+    background: var(--shape-color);
+    border: 2px solid #fff;
+    box-shadow: 0 4px 12px 0 rgba(0, 0, 0, 0.2);
+    text-align: center;
+    gap: 24px;
+  }
+  .third_shape img {
+    width: 64px;
+  }
+  .third_link {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    gap: 0;
+    transition: gap 300ms ease-in-out;
+    box-sizing: border-box;
+    padding: 4px 4px 4px 12px;
+    border: 1px solid #333;
+    border-radius: 50px;
+    cursor: pointer;
+  }
+  .third_link img {
+    width: 24px;
+  }
+  .third_link:hover {
+    gap: 24px;
+  }
+  .exellence_block {
+    width: 100%;
+    box-sizing: border-box;
+    padding: 40px 10px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+  .exellence_main {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    gap: 40px;
+    align-items: center;
+  }
+  .left_side_exellence {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    gap: 24px;
+    align-items: start;
+  }
+  .left_side_exellence_utps {
+    display: flex;
+    width: 100%;
+    flex-direction: column;
+    gap: 8px;
+  }
+  .left_side_exellence_utps_utp {
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    gap: 8px;
+  }
+  .left_side_exellence_utps_utp img {
+    width: 16px;
+    object-fit: contain;
+  }
+  .right_side_exellence {
+    width: 100%;
+  }
+  .right_side_exellence img {
+    width: 100%;
+    object-fit: contain;
+  }
+  .price {
+    width: 100%;
+    display: flex;
+    box-sizing: border-box;
+    padding: 40px 10px;
+    justify-content: center;
+    align-items: center;
+  }
+  .price_main {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    gap: 40px;
+    align-items: center;
+  }
+  .price_heead {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+    align-items: center;
+  }
+  .price_block {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+  }
+  .left_price_block {
+    width: 100%;
+    display: flex;
+  }
+  .price_shape {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    gap: 32px;
+    box-sizing: border-box;
+    padding: 32px;
+    border: 2px solid #fff;
+    border-radius: 32px;
+    box-shadow: 0 4px 12px 0 rgba(0, 0, 0, 0.2);
+    background: var(--shape-color);
+  }
+  .general_price_head {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+  }
+  .price_line {
+    width: 100%;
+    height: 1px;
+    background: var(--text-color);
+  }
+  .general_price_includes {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+  }
+  .general_price_includes ul {
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+    list-style-type: none;
+    padding-left: 12px;
+  }
+  .general_price_includes ul li {
+    background-image: url("@/assets/images/Check.png");
+    background-repeat: no-repeat;
+    background-position: 0 center;
+    background-size: 24px 24px;
+    padding-left: 32px;
+  }
+  .right_price_block {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+  }
+  .faq {
+    width: 100%;
+    display: flex;
+    box-sizing: border-box;
+    padding: 40px 10px;
+    justify-content: center;
+    align-items: center;
+  }
+  .faq_main {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    gap: 40px;
+    align-items: center;
+  }
+  .faq_header {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+    align-items: center;
+  }
+  .quests_answers {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+  }
+  .quest_answ {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    gap: 0;
+    border: 1px solid #333333;
+    overflow: hidden;
+  }
+  .quest {
+    box-sizing: border-box;
+    padding: 20px 24px;
+    display: flex;
+    width: 100%;
+    justify-content: space-between;
+    align-items: center;
+    flex-direction: row;
+    cursor: pointer;
+  }
+  .quest h6:nth-child(1) {
+    font-weight: 700;
+  }
+  .quest h6:nth-child(2) {
+    transform: rotate(0deg);
+    transition: 300ms ease;
+  }
+  .answer {
+    box-sizing: border-box;
+    padding: 0 24px 0 24px;
+    display: flex;
+    max-height: 1px;
+    transition: all 300ms ease-in-out;
+  }
+  .activeFaq {
+    max-height: 1000px;
+    padding: 0 24px 20px 24px;
+  }
+  .activePlus {
+    transform: rotate(-45deg) !important;
+  }
+  .text_btn {
+    width: 100%;
+    align-items: start;
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+  }
 }
 </style>
