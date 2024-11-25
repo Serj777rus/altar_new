@@ -41,9 +41,9 @@
           </div>
         </div>
         <div class="right_side_steps">
-          <video :class="{activeVideo: step === 1}" src="@/assets/images/starter-template-copy.mp4" type="video/mp4" loop muted autoplay></video>
-          <video :class="{activeVideo: step === 2}" src="@/assets/images/my-eye-popping-video.mp4" type="video/mp4" loop muted autoplay></video>
-          <video :class="{activeVideo: step === 3}" src="@/assets/images/my-fabulous-video.mp4" type="video/mp4" loop muted autoplay></video>
+          <video :class="{activeVideo: step === 1}" src="@/assets/images/starter-template-copy.mp4" type="video/mp4" loop muted autoplay playsinline webkit-playsinline preload="auto"></video>
+          <video :class="{activeVideo: step === 2}" src="@/assets/images/my-eye-popping-video.mp4" type="video/mp4" loop muted autoplay playsinline webkit-playsinline preload="auto"></video>
+          <video :class="{activeVideo: step === 3}" src="@/assets/images/my-fabulous-video.mp4" type="video/mp4" loop muted autoplay playsinline webkit-playsinline preload="auto"></video>
         </div>
       </div>
     </div>
