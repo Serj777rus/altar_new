@@ -221,7 +221,7 @@ export default {
   }
   .left_side_card video {
     max-width: 100%;
-    aspect-ratio: 1/1;
+    aspect-ratio: 16/9;
     object-fit: cover;
     border-radius: 12px;
   }
