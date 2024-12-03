@@ -185,7 +185,7 @@
   <div class="faq">
     <div class="faq_main">
       <div class="faq_header">
-        <img src="@/assets/images/FAQ.png" alt="icon">
+        <img src="@/assets/images/faq.png" alt="icon">
         <h3>FAQs</h3>
         <h6>Find answers to your most pressing questions about our online wedding ceremonies.</h6>
       </div>
