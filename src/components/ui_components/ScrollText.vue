@@ -79,9 +79,9 @@ export default {
   align-items: center;
   box-sizing: border-box;
   border-radius: 32px;
-  box-shadow: 0 8px 16px 2px rgba(0, 0, 0, .2);
+  //box-shadow: 0 8px 16px 2px rgba(0, 0, 0, .2);
   background: #fff;
-  padding: 48px;
+  //padding: 48px;
   /* background: rgb(247, 247, 247); */
 }
 .letter {
@@ -93,7 +93,7 @@ export default {
   transition: all .3s ease;
 }
 .activeletter {
-  color: var(--shape-color);
+  color: rgba(184, 134, 11);
 }
 @media all and (max-width: 550px) {
   .footer_main {
