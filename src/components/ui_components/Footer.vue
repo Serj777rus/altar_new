@@ -55,7 +55,7 @@
         <img src="@/assets/images/Facebook.png" alt="logo" />
         <img src="@/assets/images/Instagram.png" alt="logo" />
         <img src="@/assets/images/X.png" alt="logo" />
-        <img src="@/assets/images/Linkedin.png" alt="logo" />
+        <img src="@/assets/images/LinkedIn.png" alt="logo" />
         <img src="@/assets/images/Youtube.png" alt="logo" />
       </div>
     </div>
