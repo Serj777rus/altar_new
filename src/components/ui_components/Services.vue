@@ -6,7 +6,7 @@
         <div class="service_card" v-for="service in services" :key="service.id" :class="{active: isActive === service.id}">
           <div class="left_side_card">
             <img v-if="service.image.mime === 'image/png'" :src="`${mediaUrl}${service.image.url}`" alt="image">
-            <video v-if="service.image.mime === 'video/quicktime'" :src="`${mediaUrl}${service.image.url}`" autoplay muted loop playsinline webkit-playsinline preload="auto"></video>
+            <video v-if="service.image.mime === 'video/mp4'" :src="`${mediaUrl}${service.image.url}`" autoplay muted loop playsinline webkit-playsinline preload="auto"></video>
             <div class="banner_image">{{ service.article }}</div>
           </div>
           <div class="right_side_card">
@@ -82,7 +82,7 @@ export default {
 .service {
   width: 100%;
   position: relative;
-  height: 550px;
+  height: 320px;
 }
 .service_card {
   width: 100%;
