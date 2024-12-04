@@ -1,5 +1,5 @@
 <template>
-  <button>
+  <button @click="$emit('openContact')">
     <slot></slot>
   </button>
 </template>

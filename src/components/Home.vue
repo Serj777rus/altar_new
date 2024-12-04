@@ -7,7 +7,7 @@
           <h1>Get legally married online in US</h1>
           <h6>We've helped thousands of couples all around the world get their legal US marriage certificate available in 50 states of us and 123 countries.</h6>
           <div class="hero_btns">
-            <BlacButton><slot>Get married</slot></BlacButton>
+            <BlacButton @openContact="openModalCont"><slot>Get married</slot></BlacButton>
             <WhiteButton @click="PopUpActive = true"><slot>Contact Us</slot></WhiteButton>
           </div>
           <div class="google_reviews">
@@ -211,6 +211,8 @@
   <ScrollText></ScrollText>
   <Footer></Footer>
   <PopUp :isActive="PopUpActive" @close-pop="closePop"></PopUp>
+  <ModalContact :isActive="modalContact" @closePop="closeModalPop"></ModalContact>
+  <CookieBanner @accept="acceptCookie" @decline="declineCookie" :isActive="cookies"></CookieBanner>
 </template>
 
 <script>
@@ -226,8 +228,10 @@ import ScrollText from "@/components/ui_components/ScrollText.vue";
 import Footer from "@/components/ui_components/Footer.vue";
 import PopUp from "@/components/ui_components/PopUp.vue";
 import StepTwo  from "@/components/ui_components/StepTwo.vue"
+import ModalContact from "@/components/ui_components/ModalContact.vue";
+import CookieBanner from "@/components/ui_components/CookieBanner.vue";
 export default {
-  components: {Header, BlacButton, WhiteButton, Video, Services, Steps, TableBlock, Cases, ScrollText, Footer, PopUp, StepTwo},
+  components: {Header, BlacButton, WhiteButton, Video, Services, Steps, TableBlock, Cases, ScrollText, Footer, PopUp, StepTwo, ModalContact, CookieBanner},
   data() {
     return {
       faq: [
@@ -285,7 +289,10 @@ export default {
         }
       ],
       faqItem: null,
-      PopUpActive: false
+      PopUpActive: false,
+      modalContact: false,
+      cookies: false,
+      cookiesStatus: null
     }
   },
   methods: {
@@ -298,6 +305,41 @@ export default {
     },
     closePop(value) {
       this.PopUpActive = value
+    },
+    openModalCont() {
+      this.modalContact = true
+    },
+    closeModalPop() {
+      this.modalContact = false
+    },
+    acceptCookie() {
+      this.cookies = false;
+      this.cookiesStatus = 'Accept'
+      console.log('Собираем куки')
+    },
+    declineCookie() {
+      this.cookies = false;
+      this.cookiesStatus = 'Decline'
+      console.log('Не собираем куки')
+    },
+    launchGoogleAnalitics() {
+      if (this.cookies === 'Accept') {
+        console.log('Тут будет код Гугла')
+      } else if (this.cookies === 'Decline') {
+        return console.log('Куки не собираем');
+      }
+    }
+  },
+  mounted() {
+    setTimeout(() => {
+      this.cookies = true;
+    }, 2000)
+  },
+  watch: {
+    cookiesStatus(newValue) {
+      if (newValue) {
+        this.launchGoogleAnalitics();
+      }
     }
   }
 }

@@ -74,7 +74,7 @@ export default {
   display: flex;
   flex-direction: column;
   gap: 80px;
-  align-items: center;
+  align-items: start;
 }
 .services_main h3 {
   text-align: center;
