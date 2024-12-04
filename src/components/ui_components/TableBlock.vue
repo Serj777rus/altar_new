@@ -165,7 +165,7 @@ export default {
   width: 100%;
   display: flex;
   box-sizing: border-box;
-  padding: 80px 0;
+  padding: 40px 0;
   justify-content: center;
   align-items: center;
 }

@@ -92,7 +92,7 @@ export default {
   width: 100%;
   display: flex;
   box-sizing: border-box;
-  padding: 80px 0;
+  padding: 40px 0;
   justify-content: center;
   align-items: center;
 }
@@ -130,7 +130,7 @@ export default {
   align-items: center;
 }
 .cases_in_picture {
-  width: 1000px;
+  width: 1280px;
   display: flex;
   flex-direction: row;
   overflow: hidden;
@@ -148,9 +148,9 @@ export default {
   position: relative;
 }
 .cases_in_picture_case img {
-  width: 1000px;
+  width: 1280px;
   object-fit: cover;
-  aspect-ratio: 6/4;
+  aspect-ratio: 16/9;
   border-radius: 16px;
   filter: brightness(60%);
 }
@@ -275,6 +275,7 @@ export default {
     object-fit: cover;
     border-radius: 16px;
     filter: brightness(60%);
+    aspect-ratio: 9/6;
   }
   .text_case {
     display: flex;

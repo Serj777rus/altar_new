@@ -21,21 +21,24 @@
       </div>
       <div class="hero_utp">
         <div class="utp">
+          <p>2000+ couple</p>
+        </div>
+        <div class="utp">
+          <p>from 37 countries</p>
+        </div>
+        <div class="utp">
           <p>100% online</p>
         </div>
-        <div class="utp">
-          <p>24/7 customer support</p>
-        </div>
-        <div class="utp">
-          <p>Including weekend fast</p>
-        </div>
-        <div class="utp">
-          <p>Easy and affordable</p>
-        </div>
+<!--        <div class="utp">-->
+<!--          <p>Easy and affordable</p>-->
+<!--        </div>-->
       </div>
     </div>
   </div>
   <Video></Video>
+  <Services></Services>
+<!--  <Steps></Steps>-->
+  <StepTwo></StepTwo>
   <div class="second_block">
     <div class="second_block_main">
       <div class="second_block_left">
@@ -86,8 +89,6 @@
       </div>
     </div>
   </div>
-  <Services></Services>
-  <Steps></Steps>
   <div class="exellence_block">
     <div class="exellence_main">
       <div class="left_side_exellence">
@@ -224,8 +225,9 @@ import Cases from "@/components/ui_components/Cases.vue";
 import ScrollText from "@/components/ui_components/ScrollText.vue";
 import Footer from "@/components/ui_components/Footer.vue";
 import PopUp from "@/components/ui_components/PopUp.vue";
+import StepTwo  from "@/components/ui_components/StepTwo.vue"
 export default {
-  components: {Header, BlacButton, WhiteButton, Video, Services, Steps, TableBlock, Cases, ScrollText, Footer, PopUp},
+  components: {Header, BlacButton, WhiteButton, Video, Services, Steps, TableBlock, Cases, ScrollText, Footer, PopUp, StepTwo},
   data() {
     return {
       faq: [
@@ -308,7 +310,7 @@ export default {
   justify-content: center;
   align-items: center;
   box-sizing: border-box;
-  padding: 80px 0;
+  padding: 40px 0;
 }
 .hero_main {
   width: 1280px;
@@ -368,7 +370,7 @@ export default {
 .second_block {
   width: 100%;
   display: flex;
-  padding: 80px 0;
+  padding: 40px 0;
   box-sizing: border-box;
   justify-content: center;
   align-items: center;
@@ -425,7 +427,7 @@ export default {
   width: 100%;
   display: flex;
   box-sizing: border-box;
-  padding: 80px 0;
+  padding: 40px 0;
   justify-content: center;
   align-items: center;
 }
@@ -485,7 +487,7 @@ export default {
 .exellence_block {
   width: 100%;
   box-sizing: border-box;
-  padding: 80px 0;
+  padding: 40px 0;
   display: flex;
   justify-content: center;
   align-items: center;
@@ -531,7 +533,7 @@ export default {
   width: 100%;
   display: flex;
   box-sizing: border-box;
-  padding: 80px 0;
+  padding: 40px 0;
   justify-content: center;
   align-items: center;
 }
@@ -612,7 +614,7 @@ export default {
   width: 100%;
   display: flex;
   box-sizing: border-box;
-  padding: 80px 0;
+  padding: 40px 0;
   justify-content: center;
   align-items: center;
 }

@@ -7,7 +7,7 @@
           <div class="left_side_card">
             <img v-if="service.image.mime === 'image/png'" :src="`${mediaUrl}${service.image.url}`" alt="image">
             <video v-if="service.image.mime === 'video/mp4'" :src="`${mediaUrl}${service.image.url}`" autoplay muted loop playsinline webkit-playsinline preload="auto"></video>
-            <div class="banner_image">{{ service.article }}</div>
+<!--            <div class="banner_image">{{ service.article }}</div>-->
           </div>
           <div class="right_side_card">
             <h6>Our Services</h6>
@@ -65,7 +65,7 @@ export default {
   width: 100%;
   display: flex;
   box-sizing: border-box;
-  padding: 80px 0;
+  padding: 40px 0;
   justify-content: center;
   align-items: center;
 }
@@ -194,7 +194,8 @@ export default {
   .service {
     width: 100%;
     position: relative;
-    height: 760px;
+    height: 560px;
+    order: 3
   }
   .service_card {
     width: 100%;
@@ -261,6 +262,7 @@ export default {
     padding: 8px;
     border-radius: 12px;
     background: var(--shape-color);
+    order: 2;
   }
   .tab {
     height: 72px;
