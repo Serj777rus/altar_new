@@ -83,6 +83,9 @@ export default {
       }
     },
     addReview() {
+      if (this.countAllReviews > this.arrLength) {
+        this.countAllReviews = this.arrLength;
+      }
       this.reviewsForOut = []
       for (let i = 0; i < this.countAllReviews; i++) {
         this.reviewsForOut.push(this.reviews[i]);
