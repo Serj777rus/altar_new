@@ -74,4 +74,52 @@ export default {
   font-size: 32px;
   font-weight: bold;
 }
+@media all and (max-width: 550px) {
+  .modal {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 12px 10px;
+    margin: 0;
+    box-sizing: border-box;
+    position: fixed;
+    bottom: -100%;
+    left: 0;
+    z-index: 1000;
+    transition: all 1s ease;
+  }
+  .active {
+    bottom: 0;
+  }
+  .modal_container {
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    gap: 12px;
+    padding: 12px 24px;
+    border-radius: 48px;
+    background: var(--shape-color);
+    box-shadow: 0px 4px 12px 0 rgba(0, 0, 0, 0.2);
+    position: relative;
+  }
+  .modal_container img {
+    width: 32px;
+    transition: all 200ms ease;
+    cursor: pointer;
+  }
+  .modal_container img:hover {
+    transform: translateY(-12px);
+  }
+  .modal_container p {
+    position: absolute;
+    top: -32px;
+    right: 12px;
+    cursor: pointer;
+    font-size: 32px;
+    font-weight: bold;
+  }
+}
 </style>

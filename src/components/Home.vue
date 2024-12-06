@@ -39,56 +39,56 @@
   <Services></Services>
 <!--  <Steps></Steps>-->
   <StepTwo></StepTwo>
-  <div class="second_block">
-    <div class="second_block_main">
-      <div class="second_block_left">
-        <div class="second_left_text">
-          <h3>Experience the Magic of Online Weddings, Anytime, Anywhere!</h3>
-          <h6>Celebrate your love story with our seamless online wedding ceremonies. Enjoy a personalized experience that connects you and your loved ones, no matter the distance.</h6>
-        </div>
-        <div class="second_left_shape">
-          <div class="shape">
-            <img src="@/assets/images/icon_why_.png" alt="icon">
-            <h5>Why Online?</h5>
-            <p>Convenience, flexibility, and a unique way to say 'I do' together.</p>
-          </div>
-          <div class="shape">
-            <img src="@/assets/images/icon_promise.png" alt="icon">
-            <h5>Our Promise</h5>
-            <p>Creating unforgettable moments with love and joy, wherever you are.</p>
-          </div>
-        </div>
-      </div>
-      <div class="second_block_right">
-        <img src="@/assets/images/photo_change.png" alt="photo">
-      </div>
-    </div>
-  </div>
-  <div class="third_block">
-    <div class="third_block_main">
-      <h3>Experience Unforgettable Online Wedding Ceremonies Tailored Just for You</h3>
-      <div class="third_block_shapes">
-        <div class="third_shape">
-          <img src="@/assets/images/icon_wedding.png" alt="icon">
-          <h4>Crafting Beautiful Moments with Our Unique Virtual Wedding Services</h4>
-          <p>Our services are designed to create a memorable and personalized online wedding experience.</p>
-          <div class="third_link"><p>Learn More</p><img src="@/assets/images/chevron-right.svg"></div>
-        </div>
-        <div class="third_shape">
-          <img src="@/assets/images/icon_docs.png" alt="icon">
-          <h4>Comprehensive Packages to Suit Every Couple's Unique Wedding Vision</h4>
-          <p>From intimate elopements to grand virtual celebrations, we have you covered.</p>
-          <div class="third_link"><p>Sign Up</p><img src="@/assets/images/chevron-right.svg"></div>
-        </div>
-        <div class="third_shape">
-          <img src="@/assets/images/icon_steps.png" alt="icon">
-          <h4>Step-by-Step Guidance for a Seamless Online Wedding Experience</h4>
-          <p>We walk you through every stage, ensuring your day is perfect.</p>
-          <div class="third_link"><p>Get Started</p><img src="@/assets/images/chevron-right.svg"></div>
-        </div>
-      </div>
-    </div>
-  </div>
+<!--  <div class="second_block">-->
+<!--    <div class="second_block_main">-->
+<!--      <div class="second_block_left">-->
+<!--        <div class="second_left_text">-->
+<!--          <h3>Experience the Magic of Online Weddings, Anytime, Anywhere!</h3>-->
+<!--          <h6>Celebrate your love story with our seamless online wedding ceremonies. Enjoy a personalized experience that connects you and your loved ones, no matter the distance.</h6>-->
+<!--        </div>-->
+<!--        <div class="second_left_shape">-->
+<!--          <div class="shape">-->
+<!--            <img src="@/assets/images/icon_why_.png" alt="icon">-->
+<!--            <h5>Why Online?</h5>-->
+<!--            <p>Convenience, flexibility, and a unique way to say 'I do' together.</p>-->
+<!--          </div>-->
+<!--          <div class="shape">-->
+<!--            <img src="@/assets/images/icon_promise.png" alt="icon">-->
+<!--            <h5>Our Promise</h5>-->
+<!--            <p>Creating unforgettable moments with love and joy, wherever you are.</p>-->
+<!--          </div>-->
+<!--        </div>-->
+<!--      </div>-->
+<!--      <div class="second_block_right">-->
+<!--        <img src="@/assets/images/photo_change.png" alt="photo">-->
+<!--      </div>-->
+<!--    </div>-->
+<!--  </div>-->
+<!--  <div class="third_block">-->
+<!--    <div class="third_block_main">-->
+<!--      <h3>Experience Unforgettable Online Wedding Ceremonies Tailored Just for You</h3>-->
+<!--      <div class="third_block_shapes">-->
+<!--        <div class="third_shape">-->
+<!--          <img src="@/assets/images/icon_wedding.png" alt="icon">-->
+<!--          <h4>Crafting Beautiful Moments with Our Unique Virtual Wedding Services</h4>-->
+<!--          <p>Our services are designed to create a memorable and personalized online wedding experience.</p>-->
+<!--          <div class="third_link"><p>Learn More</p><img src="@/assets/images/chevron-right.svg"></div>-->
+<!--        </div>-->
+<!--        <div class="third_shape">-->
+<!--          <img src="@/assets/images/icon_docs.png" alt="icon">-->
+<!--          <h4>Comprehensive Packages to Suit Every Couple's Unique Wedding Vision</h4>-->
+<!--          <p>From intimate elopements to grand virtual celebrations, we have you covered.</p>-->
+<!--          <div class="third_link"><p>Sign Up</p><img src="@/assets/images/chevron-right.svg"></div>-->
+<!--        </div>-->
+<!--        <div class="third_shape">-->
+<!--          <img src="@/assets/images/icon_steps.png" alt="icon">-->
+<!--          <h4>Step-by-Step Guidance for a Seamless Online Wedding Experience</h4>-->
+<!--          <p>We walk you through every stage, ensuring your day is perfect.</p>-->
+<!--          <div class="third_link"><p>Get Started</p><img src="@/assets/images/chevron-right.svg"></div>-->
+<!--        </div>-->
+<!--      </div>-->
+<!--    </div>-->
+<!--  </div>-->
   <div class="exellence_block">
     <div class="exellence_main">
       <div class="left_side_exellence">
@@ -118,6 +118,7 @@
   </div>
   <TableBlock></TableBlock>
   <Cases></Cases>
+  <RewievsPage></RewievsPage>
   <div class="price">
     <div class="price_main">
       <div class="price_heead">
@@ -230,8 +231,9 @@ import PopUp from "@/components/ui_components/PopUp.vue";
 import StepTwo  from "@/components/ui_components/StepTwo.vue"
 import ModalContact from "@/components/ui_components/ModalContact.vue";
 import CookieBanner from "@/components/ui_components/CookieBanner.vue";
+import RewievsPage from "@/components/ui_components/RewievsPage.vue";
 export default {
-  components: {Header, BlacButton, WhiteButton, Video, Services, Steps, TableBlock, Cases, ScrollText, Footer, PopUp, StepTwo, ModalContact, CookieBanner},
+  components: {Header, BlacButton, WhiteButton, Video, Services, Steps, TableBlock, Cases, ScrollText, Footer, PopUp, StepTwo, ModalContact, CookieBanner, RewievsPage},
   data() {
     return {
       faq: [
