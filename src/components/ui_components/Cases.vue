@@ -63,7 +63,7 @@ export default {
   },
   data() {
     return {
-      mediaUrl: 'http://154.12.254.79',
+      mediaUrl: 'https://154.12.254.79',
       widthBlock: null
     }
   },

@@ -28,7 +28,7 @@ export default {
   },
   data() {
     return {
-      mediaUrl: 'http://admin.tryaltar.com',
+      mediaUrl: 'https://admin.tryaltar.com',
       isActiveVideo: null,
     }
   },

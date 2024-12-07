@@ -39,7 +39,7 @@ export default {
   components: {WhiteButton},
   data() {
     return {
-      mediaUrl: 'http://admin.tryaltar.com',
+      mediaUrl: 'https://admin.tryaltar.com',
       isActive: 7
     }
   },
