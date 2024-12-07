@@ -15,6 +15,7 @@ const port = process.env.PORT || 3000;
 const server = http.createServer(app);
 
 app.get('/getData', async (req, res) => {
+    console.log('Yes')
     try {
         const [responseVideo, responseReviews, responseCases, responseServises] = await Promise.all([
             await axios.get('http://localhost:1337/api/weddings?populate=*'),
