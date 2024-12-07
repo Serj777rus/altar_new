@@ -7,7 +7,7 @@
       </div>
       <div class="videos">
         <div class="video" v-for="video in videos" :key="video.id" @mouseover="playVideo(video.id)" @mouseleave="pauseVideo(video.id)">
-          <video :id="video.id" :src="`${mediaUrl}${video.video.url}`" muted loop></video>
+          <video :id="video.id" :src="`${mediaUrl}${video.video.url}`" muted loop playsinline></video>
           <h4>{{ video.article }}</h4>
           <p>{{ video.description }}</p>
           <img class="poster" :class="{active: isActiveVideo === video.id}" :src="`${mediaUrl}${video.cover.url}`" alt="poster"/>
