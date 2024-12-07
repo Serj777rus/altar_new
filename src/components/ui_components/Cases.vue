@@ -63,7 +63,7 @@ export default {
   },
   data() {
     return {
-      mediaUrl: 'https://154.12.254.79',
+      mediaUrl: 'https://admin.tryaltar.com',
       widthBlock: null
     }
   },
