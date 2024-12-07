@@ -35,8 +35,8 @@
       </div>
     </div>
   </div>
-  <Video></Video>
-  <Services></Services>
+  <Video :videos="videoProps"></Video>
+  <Services :services="servicesProps"></Services>
 <!--  <Steps></Steps>-->
   <StepTwo></StepTwo>
 <!--  <div class="second_block">-->
@@ -117,8 +117,8 @@
     </div>
   </div>
   <TableBlock></TableBlock>
-  <Cases></Cases>
-  <RewievsPage></RewievsPage>
+  <Cases :casesData="casesProps"></Cases>
+  <RewievsPage :reviews="reviewsProps"></RewievsPage>
   <div class="price">
     <div class="price_main">
       <div class="price_heead">
@@ -232,6 +232,7 @@ import StepTwo  from "@/components/ui_components/StepTwo.vue"
 import ModalContact from "@/components/ui_components/ModalContact.vue";
 import CookieBanner from "@/components/ui_components/CookieBanner.vue";
 import RewievsPage from "@/components/ui_components/RewievsPage.vue";
+import axios from "axios";
 export default {
   components: {Header, BlacButton, WhiteButton, Video, Services, Steps, TableBlock, Cases, ScrollText, Footer, PopUp, StepTwo, ModalContact, CookieBanner, RewievsPage},
   data() {
@@ -294,7 +295,11 @@ export default {
       PopUpActive: false,
       modalContact: false,
       cookies: false,
-      cookiesStatus: null
+      cookiesStatus: null,
+      videoProps: [],
+      casesProps: [],
+      reviewsProps: [],
+      servicesProps: []
     }
   },
   methods: {
@@ -303,6 +308,17 @@ export default {
         this.faqItem = null
       } else {
         this.faqItem = id
+      }
+    },
+    async getData() {
+      try {
+        const response = await axios.get('api/getData')
+        this.videoProps = response.data.video.data;
+        this.casesProps = response.data.cases.data;
+        this.reviewsProps = response.data.reviews.data;
+        this.servicesProps = response.data.servises.data;
+      } catch (error) {
+        console.log(error)
       }
     },
     closePop(value) {
@@ -330,12 +346,16 @@ export default {
       } else if (this.cookies === 'Decline') {
         return console.log('Куки не собираем');
       }
+    },
+    cookiesData() {
+      setTimeout(() => {
+        this.cookies = true;
+      }, 2000)
     }
   },
-  mounted() {
-    setTimeout(() => {
-      this.cookies = true;
-    }, 2000)
+  async mounted() {
+    this.cookiesData();
+    await this.getData();
   },
   watch: {
     cookiesStatus(newValue) {

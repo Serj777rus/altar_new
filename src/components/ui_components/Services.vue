@@ -28,34 +28,29 @@
 </template>
 
 <script>
-import axios from "axios";
 import WhiteButton from "@/components/ui_components/WhiteButton.vue";
 export default {
+  props: {
+    services: {
+      type: Array,
+      required: true,
+    }
+  },
   components: {WhiteButton},
   data() {
     return {
-      services: [],
-      mediaUrl: 'http://154.12.254.79',
+      mediaUrl: 'http://admin.tryaltar.com',
       isActive: 7
     }
   },
-  methods: {
-    async getServices() {
-      try {
-        const response = await axios.get('http://154.12.254.79/api/forwhos?populate=*')
-        if (response.data.data !== null) {
-          this.services = response.data.data;
-          localStorage.setItem('services', JSON.stringify(this.services));
+  watch: {
+    services: {
+      handler(newValue) {
+        if (newValue) {
+          this.isActive = this.services[0].id;
         }
-      } catch(error) {
-        console.log(error)
       }
     }
-  },
-  async mounted() {
-    await this.getServices();
-    console.log(this.services)
-    this.isActive = this.services[0].id;
   }
 }
 </script>

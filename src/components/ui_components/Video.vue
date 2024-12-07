@@ -19,29 +19,20 @@
 </template>
 
 <script>
-import axios from "axios";
-import WhiteButton from "@/components/ui_components/WhiteButton.vue";
 export default {
-  // components: {WhiteButton},
+  props: {
+    videos: {
+      type: Array,
+      required: true,
+    }
+  },
   data() {
     return {
-      videos: [],
       mediaUrl: 'http://admin.tryaltar.com',
       isActiveVideo: null,
     }
   },
   methods: {
-    async getVideos() {
-      try {
-        const response = await axios.get('http://admin.tryaltar.com/api/weddings?populate=*')
-        if (response) {
-          console.log(response.data.data);
-          this.videos = response.data.data;
-        }
-      } catch(error) {
-        console.log(error)
-      }
-    },
     playVideo(id) {
       let videoElement = document.getElementById(id);
       if (videoElement) {
@@ -59,9 +50,6 @@ export default {
       }
     }
   },
-  async mounted() {
-    await this.getVideos();
-  }
 }
 </script>
 

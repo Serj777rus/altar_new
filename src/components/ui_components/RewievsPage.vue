@@ -32,13 +32,17 @@
 </template>
 
 <script>
-import axios from "axios";
 import BlacButton from "@/components/ui_components/BlacButton.vue";
 export default {
+  props: {
+    reviews: {
+      type: Array,
+      required: true,
+    }
+  },
   components: {BlacButton},
   data() {
     return {
-      reviews: [],
       starOne: '⭐',
       starTwo: '⭐⭐',
       starThree: '⭐⭐⭐',
@@ -51,11 +55,9 @@ export default {
     }
   },
   methods: {
-    async getReviews() {
-      try {
-        const response = await axios.get('http://154.12.254.79/api/reviews')
+    getReviews() {
         let cifr = 0
-        response.data.data.forEach(review => {
+        this.reviews.forEach(review => {
           cifr = cifr + review.count
           if (review.count === 1) {
             review.stars = this.starOne;
@@ -73,14 +75,9 @@ export default {
             review.stars = this.starFive;
           }
         })
-        this.count = cifr / response.data.data.length;
-        this.reviews = response.data.data;
-        this.arrLength = response.data.data.length;
+        this.count = cifr / this.reviews.length;
+        this.arrLength = this.reviews.length;
         this.addReview();
-        console.log(this.reviews);
-      } catch (error) {
-        console.log(error)
-      }
     },
     addReview() {
       if (this.countAllReviews > this.arrLength) {
@@ -95,11 +92,15 @@ export default {
   watch: {
     countAllReviews(newValue) {
       this.addReview();
+    },
+    reviews: {
+      handler(newValue) {
+        if (newValue) {
+          this.getReviews();
+        }
+      }
     }
   },
-  mounted() {
-    this.getReviews();
-  }
 }
 </script>
 

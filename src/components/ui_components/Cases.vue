@@ -54,35 +54,34 @@
 </template>
 
 <script>
-import axios from "axios";
 export default {
+  props: {
+    casesData: {
+      type: Array,
+      required: true,
+    }
+  },
   data() {
     return {
-      casesData: [],
       mediaUrl: 'http://154.12.254.79',
       widthBlock: null
     }
   },
   methods: {
-    async getCases() {
-      try {
-        const response = await axios.get('http://154.12.254.79/api/cases?populate=*');
-        if (response) {
-          this.casesData = response.data.data;
-        }
-      } catch (error) {
-        console.log(error)
-      }
-    },
     changeSlide(index) {
       let transform = (this.widthBlock / this.casesData.length) * index;
       let block = document.querySelector('.changed_block');
       block.style.transform = `translateX(-${transform}px)`;
     }
   },
-  async mounted() {
-    await this.getCases();
-    this. widthBlock = (document.querySelector('.changed_block').clientWidth) * this.casesData.length;
+  watch: {
+    casesData: {
+      handler(newValue) {
+        if (newValue) {
+          this.widthBlock = (document.querySelector('.changed_block').clientWidth) * this.casesData.length;
+        }
+      }
+    }
   }
 }
 </script>
