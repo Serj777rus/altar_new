@@ -21,7 +21,7 @@ app.get('/getData', async (req, res) => {
             await axios.get('http://localhost:1337/api/weddings?populate=*'),
             await axios.get('http://localhost:1337/api/reviews'),
             await axios.get('http://localhost:1337/api/cases?populate=*'),
-            await axios.get('http://localhost:1337/api/forwhos?populate=*')
+            await axios.get('http://localhost:1337/api/services?populate=*')
         ])
         res.status(200).json({video: responseVideo.data, reviews: responseReviews.data, cases: responseCases.data, servises: responseServises.data});
     } catch (error) {

@@ -5,22 +5,27 @@
       <div class="service">
         <div class="service_card" v-for="service in services" :key="service.id" :class="{active: isActive === service.id}">
           <div class="left_side_card">
-            <img v-if="service.image.mime === 'image/png'" :src="`${mediaUrl}${service.image.url}`" alt="image">
-            <video v-if="service.image.mime === 'video/mp4'" :src="`${mediaUrl}${service.image.url}`" autoplay muted loop playsinline webkit-playsinline preload="auto"></video>
+<!--            <img v-if="service.image.mime === 'image/png'" :src="`${mediaUrl}${service.cover.url}`" alt="image">-->
+            <video v-if="service.video.mime === 'video/mp4'" :src="`${mediaUrl}${service.video.url}`" autoplay muted loop playsinline webkit-playsinline preload="auto"></video>
 <!--            <div class="banner_image">{{ service.article }}</div>-->
           </div>
           <div class="right_side_card">
-            <h6>Our Services</h6>
-            <h3>{{ service.Service }}</h3>
-            <p>{{ service.description }}</p>
-            <WhiteButton><slot>Read more</slot></WhiteButton>
+<!--            <h6>Our Services</h6>-->
+            <h3>{{ service.name_service }}</h3>
+            <p>{{ service.description_service }}</p>
+            <h6>{{ service.article_service }}</h6>
+            <p>{{ service.article_advantages }}</p>
+            <ul>
+              <li v-for="advantage in service.advantages" :key="advantage.id">{{ advantage.advantage }}</li>
+            </ul>
+<!--            <WhiteButton><slot>Read more</slot></WhiteButton>-->
           </div>
         </div>
       </div>
       <div class="tabs">
         <div class="tab" v-for="tab in services" :key="tab.id" @click="isActive = tab.id">
-          <img :src="`${mediaUrl}${tab.moreimages.url}` || `${mediaUrl}${tab.image.url}`" alt="image">
-          <p>{{ tab.Service }}</p>
+          <img :src="`${mediaUrl}${tab.cover.url}`" alt="image">
+          <p>{{ tab.name_service }}</p>
         </div>
       </div>
     </div>
@@ -84,7 +89,7 @@ export default {
   display: flex;
   flex-direction: row;
   gap: 80px;
-  align-items: center;
+  align-items: start;
   justify-content: center;
   transform: translateX(-200%);
   position: absolute;
@@ -108,19 +113,6 @@ export default {
   object-fit: cover;
   border-radius: 12px;
 }
-.banner_image {
-  position: absolute;
-  bottom: -20px;
-  left: 50%;
-  transform: translate(-50%, 0);
-  z-index: 1;
-  color: var(--text-color);
-  box-sizing: border-box;
-  padding: 16px 48px;
-  background: var(--shape-color);
-  border-radius: 8px;
-  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2), 0 6px 20px rgba(0, 0, 0, 0.19);
-}
 .right_side_card {
   width: 100%;
   display: flex;
@@ -130,6 +122,28 @@ export default {
 }
 .right_side_card h3 {
   color: var(--shape-color);
+}
+.right_side_card h6 {
+  font-weight: 800;
+  box-sizing: border-box;
+  padding: 12px;
+  border-left: 4px solid var(--shape-color);
+}
+.right_side_card ul li::marker {
+  color: var(--shape-color);
+  font-size: 32px;
+  align-self: center;
+  justify-self: center;
+}
+.right_side_card ul {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+.right_side_card ul li {
+  line-height: 100%;
+  align-items: start;
+  justify-content: start;
 }
 .active {
   transform: translateX(0);
@@ -189,7 +203,7 @@ export default {
   .service {
     width: 100%;
     position: relative;
-    height: 560px;
+    height: 640px;
     order: 3
   }
   .service_card {

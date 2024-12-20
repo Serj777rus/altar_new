@@ -92,31 +92,31 @@
   <div class="exellence_block">
     <div class="exellence_main">
       <div class="left_side_exellence">
-        <p>Excellence</p>
-        <h3>Your Dream Wedding, Effortlessly Online</h3>
-        <h6>Our online wedding ceremonies bring your vision to life, no matter where you are. Experience the joy of saying 'I do' in a modern, personalized way.</h6>
+        <h3>About US</h3>
+        <h6>There is real story behind all of this</h6>
         <div class="left_side_exellence_utps">
-          <div class="left_side_exellence_utps_utp">
-            <img src="@/assets/images/Relume.png" alt="icon">
-            <p>Convenience: Celebrate from anywhere, anytime with ease.</p>
-          </div>
-          <div class="left_side_exellence_utps_utp">
-            <img src="@/assets/images/Relume.png" alt="icon">
-            <p>Customization: Tailor your ceremony to reflect your love.</p>
-          </div>
-          <div class="left_side_exellence_utps_utp">
-            <img src="@/assets/images/Relume.png" alt="icon">
-            <p>Affordability: Enjoy a beautiful ceremony without breaking the bank.</p>
-          </div>
+          <p>We’re not just another scam company offering online wedding services. Behind us lies a rich history that began in 2017 when our founder, Maksim, started officiating weddings in New York. When the pandemic hit, he took this passion online, helping couples celebrate their love despite the challenges. With years of experience and countless love stories behind us, we’re here to make your special day truly unforgettable.</p>
         </div>
-        <WhiteButton><slot>Sign Up</slot></WhiteButton>
+        <WhiteButton><slot>Contact US</slot></WhiteButton>
       </div>
       <div class="right_side_exellence">
-        <img src="@/assets/images/Placeholder%20Image.png" alt="icon">
+        <img src="@/assets/images/Maksim.jpg" alt="icon">
       </div>
     </div>
   </div>
   <TableBlock></TableBlock>
+  <div class="certificate_block">
+    <div class="certificate_main">
+      <div class="left_side">
+        <h3>Get your marriage certificate then standard from</h3>
+        <h6>Receive a recognized certificate after the ceremony</h6>
+        <BlacButton><slot>Get Married</slot></BlacButton>
+      </div>
+      <div class="right_side">
+        <img src="@/assets/images/real_certificate.jpg" alt="icon">
+      </div>
+    </div>
+  </div>
   <Cases :casesData="casesProps"></Cases>
   <RewievsPage :reviews="reviewsProps"></RewievsPage>
   <div class="price">
@@ -575,16 +575,9 @@ export default {
   width: 100%;
   flex-direction: column;
   gap: 16px;
-}
-.left_side_exellence_utps_utp {
-  width: 100%;
-  display: flex;
-  flex-direction: row;
-  gap: 16px;
-}
-.left_side_exellence_utps_utp img {
-  width: 16px;
-  object-fit: contain;
+  box-sizing: border-box;
+  padding-left: 24px;
+  border-left: 4px solid var(--shape-color);
 }
 .right_side_exellence {
   width: 100%;
@@ -592,6 +585,7 @@ export default {
 .right_side_exellence img {
   width: 100%;
   object-fit: contain;
+  border-radius: 16px;
 }
 .price {
   width: 100%;
@@ -965,6 +959,10 @@ export default {
     flex-direction: column;
     gap: 8px;
   }
+  .left_side_exellence_utps p {
+    box-sizing: border-box;
+    padding-left: 12px;
+  }
   .left_side_exellence_utps_utp {
     width: 100%;
     display: flex;
@@ -1137,6 +1135,82 @@ export default {
     display: flex;
     flex-direction: column;
     gap: 16px;
+  }
+}
+.certificate_block {
+  width: 100%;
+  display: flex;
+  box-sizing: border-box;
+  padding: 40px 0;
+  justify-content: center;
+  align-items: center;
+}
+.certificate_main {
+  width: 1280px;
+  display: flex;
+  flex-direction: row;
+  gap: 40px;
+  align-items: center;
+  box-sizing: border-box;
+  padding: 32px;
+  border-radius: 32px;
+  box-shadow: 0 4px 12px 0 rgba(0, 0, 0, 0.2);
+}
+.left_side {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  gap: 32px;
+  align-items: start;
+}
+.right_side {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.right_side img {
+  width: 50%;
+}
+@media all and (max-width: 550px) {
+  .certificate_block {
+    width: 100%;
+    display: flex;
+    box-sizing: border-box;
+    padding: 40px 10px;
+    justify-content: center;
+    align-items: center;
+  }
+  .certificate_main {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    gap: 32px;
+    align-items: center;
+    box-sizing: border-box;
+    padding: 32px;
+    border-radius: 16px;
+    box-shadow: none;
+  }
+  .left_side {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+    align-items: center;
+    order: 2;
+  }
+  .left_side h3 {
+    text-align: center;
+  }
+  .right_side {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+  .right_side img {
+    width: 100%;
   }
 }
 </style>
