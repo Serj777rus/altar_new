@@ -45,7 +45,7 @@ export default {
 }
 .header_logo h2 {
   font-size: 32px;
-  color: var(--shape-color);
+  color: var(--text-color);
 }
 @media all and (max-width: 550px) {
   .header {
