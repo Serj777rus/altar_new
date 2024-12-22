@@ -2,7 +2,7 @@
   <div class="header">
     <div class="header_main">
       <div class="header_logo">
-        <img src="@/assets/images/Wedding_Rings_Gold_PNG_Clip_Art-2499%201.png" alt="logo">
+        <img src="@/assets/images/logo.svg" alt="logo">
         <h2>ALTAR</h2>
       </div>
       <BlacButton @click="$emit('open-pop', true)"><slot>Contact US</slot></BlacButton>
@@ -23,7 +23,8 @@ export default {
   display: flex;
   justify-content: center;
   align-items: center;
-  margin-top: 24px;
+  padding-top: 48px;
+  background: var(--back-yellow);
 }
 .header_main {
   width: 1280px;

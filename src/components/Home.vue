@@ -16,22 +16,19 @@
           </div>
         </div>
         <div class="hero_right_side">
-          <img src="@/assets/images/hero_image.png" alt="logo">
+          <img src="@/assets/images/heroimage.svg" alt="logo">
+          <div class="hero_utp">
+            <div class="utp">
+              <p>2000+ couple</p>
+            </div>
+            <div class="utp">
+              <p>from 37 countries</p>
+            </div>
+            <div class="utp">
+              <p>100% online</p>
+            </div>
+          </div>
         </div>
-      </div>
-      <div class="hero_utp">
-        <div class="utp">
-          <p>2000+ couple</p>
-        </div>
-        <div class="utp">
-          <p>from 37 countries</p>
-        </div>
-        <div class="utp">
-          <p>100% online</p>
-        </div>
-<!--        <div class="utp">-->
-<!--          <p>Easy and affordable</p>-->
-<!--        </div>-->
       </div>
     </div>
   </div>
@@ -100,7 +97,11 @@
         <WhiteButton><slot>Contact US</slot></WhiteButton>
       </div>
       <div class="right_side_exellence">
-        <img src="@/assets/images/Maksim.jpg" alt="icon">
+        <img class="about_img" src="@/assets/images/Maksim.jpg" alt="icon">
+        <img class="about_img" src="@/assets/images/photo_2024-12-22%2012.05.37.jpeg" alt="icon">
+        <img class="about_img" src="@/assets/images/photo_2024-12-22%2012.05.41.jpeg" alt="icon">
+        <img class="tab_left" @click="prewPhoto" src="@/assets/images/Linear%20Icons.svg" alt="icon">
+        <img class="tab_right" @click="nextPhoto" src="@/assets/images/Linear%20Icons.svg" alt="icon">
       </div>
     </div>
   </div>
@@ -132,9 +133,7 @@
               <h5>The Base Package</h5>
               <h2>$500</h2>
             </div>
-            <div class="price_line"></div>
             <div class="general_price_includes">
-              <p>includes:</p>
               <ul>
                 <li>100% Satisfaction Guarantee</li>
                 <li>Unlimited consultation leading up to your day</li>
@@ -148,7 +147,6 @@
                 <li>Get a Full Refund if You Change Your Mind</li>
               </ul>
             </div>
-            <BlacButton><slot>Get Started</slot></BlacButton>
           </div>
         </div>
         <div class="right_price_block">
@@ -157,31 +155,30 @@
               <h5>Add-Ons</h5>
               <h2>$50</h2>
             </div>
-            <div class="price_line"></div>
             <div class="general_price_includes">
-              <p>includes:</p>
               <ul>
                 <li>100% Satisfaction Guarantee</li>
                 <li>Unlimited consultation leading up to your day</li>
               </ul>
             </div>
           </div>
+          <div class="price_line"></div>
           <div class="price_shape">
             <div class="general_price_head">
               <h5>Add-Ons</h5>
               <h2>$50</h2>
             </div>
-            <div class="price_line"></div>
             <div class="general_price_includes">
-              <p>includes:</p>
               <ul>
                 <li>100% Satisfaction Guarantee</li>
                 <li>Unlimited consultation leading up to your day</li>
+                <li>One Digital Copy of Marriage certificate</li>
               </ul>
             </div>
           </div>
         </div>
       </div>
+      <BlacButton><slot>Get Started</slot></BlacButton>
     </div>
   </div>
   <div class="faq">
@@ -351,11 +348,39 @@ export default {
       setTimeout(() => {
         this.cookies = true;
       }, 2000)
+    },
+    nextPhoto() {
+      let images = document.querySelectorAll('.about_img');
+      let currentIndex = -1;
+      images.forEach((image, index) => {
+        if (image.classList.contains('active')) {
+          currentIndex = index;
+          image.classList.remove('active'); // Удалить класс у текущего
+        }
+      });
+      let nextIndex = (currentIndex + 1) % images.length;
+      images[nextIndex].classList.add('active');
+    },
+    prewPhoto() {
+      let images = document.querySelectorAll('.about_img');
+      let currentIndex = -1;
+      images.forEach((image, index) => {
+        if (image.classList.contains('active')) {
+          currentIndex = index;
+          image.classList.remove('active'); // Удалить класс у текущего
+        }
+      });
+      let nextIndex = (currentIndex - 1) % images.length;
+      if (nextIndex < 0) {
+        nextIndex = images.length - 1;
+      }
+      images[nextIndex].classList.add('active');
     }
   },
   async mounted() {
     this.cookiesData();
     await this.getData();
+    document.querySelector('.about_img').classList.add('active');
   },
   watch: {
     cookiesStatus(newValue) {
@@ -375,6 +400,7 @@ export default {
   align-items: center;
   box-sizing: border-box;
   padding: 40px 0;
+  background: var(--back-yellow);
 }
 .hero_main {
   width: 1280px;
@@ -414,6 +440,10 @@ export default {
 }
 .hero_right_side {
   width: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  gap: 24px;
 }
 .hero_right_side img {
   width: 100%;
@@ -430,6 +460,9 @@ export default {
   padding: 8px 18px;
   background: var(--shape-color);
   border-radius: 16px;
+}
+.utp p {
+  font-weight: 500;
 }
 .second_block {
   width: 100%;
@@ -581,11 +614,55 @@ export default {
 }
 .right_side_exellence {
   width: 100%;
+  display: flex;
+  flex-direction: row;
+  overflow: hidden;
+  position: relative;
 }
-.right_side_exellence img {
+.about_img {
   width: 100%;
   object-fit: contain;
   border-radius: 16px;
+  opacity: 0;
+  display: none;
+}
+.active {
+  opacity: 1;
+  display: block;
+}
+.tab_left {
+  position: absolute;
+  top: 50%;
+  left: 12px;
+  transform: translate(0, -50%);
+  height: 96px;
+  width: 96px;
+  cursor: pointer;
+}
+.tab_right {
+  position: absolute;
+  top: 50%;
+  right: 12px;
+  transform: translate(0, -50%) rotate(180deg);
+  height: 96px;
+  width: 96px;
+  cursor: pointer;
+}
+@media all and (max-width: 500px) {
+  .tab_left {
+    width: 64px;
+    height: 64px;
+    top: 50%;
+    left: 24px;
+    transform: translate(-50%,-50%);
+  }
+  .tab_right {
+    width: 64px;
+    height: 64px;
+    top: 50%;
+    right: 24px;
+    transform: translate(50%,-50%) rotate(180deg);
+  }
 }
 .price {
   width: 100%;
@@ -594,6 +671,7 @@ export default {
   padding: 40px 0;
   justify-content: center;
   align-items: center;
+  background: var(--back-yellow);
 }
 .price_main {
   width: 1280px;
@@ -613,7 +691,7 @@ export default {
   width: 1024px;
   display: flex;
   flex-direction: row;
-  gap: 48px;
+  gap: 120px;
 }
 .left_price_block {
   width: 100%;
@@ -625,11 +703,12 @@ export default {
   flex-direction: column;
   gap: 32px;
   box-sizing: border-box;
-  padding: 32px;
-  border: 2px solid #fff;
-  border-radius: 32px;
-  box-shadow: 0 4px 12px 0 rgba(0, 0, 0, 0.2);
-  background: var(--shape-color);
+  align-items: start;
+  //padding: 32px;
+  //border: 2px solid #fff;
+  //border-radius: 32px;
+  //box-shadow: 0 4px 12px 0 rgba(0, 0, 0, 0.2);
+  //background: var(--shape-color);
 }
 .general_price_head {
   width: 100%;
@@ -637,10 +716,13 @@ export default {
   flex-direction: column;
   gap: 8px;
 }
+.general_price_head h5 {
+  color: var(--blue);
+}
 .price_line {
   width: 100%;
   height: 1px;
-  background: var(--text-color);
+  background: var(--blue);
 }
 .general_price_includes {
   width: 100%;
@@ -656,7 +738,7 @@ export default {
   padding-left: 12px;
 }
 .general_price_includes ul li {
-  background-image: url("@/assets/images/Check.png");
+  background-image: url("@/assets/images/check.svg");
   background-repeat: no-repeat;
   background-position: 0 center;
   background-size: 24px 24px;
@@ -1020,21 +1102,16 @@ export default {
     gap: 32px;
     box-sizing: border-box;
     padding: 32px;
-    border: 2px solid #fff;
-    border-radius: 32px;
-    box-shadow: 0 4px 12px 0 rgba(0, 0, 0, 0.2);
-    background: var(--shape-color);
+    //border: 2px solid #fff;
+    //border-radius: 32px;
+    //box-shadow: 0 4px 12px 0 rgba(0, 0, 0, 0.2);
+    //background: var(--shape-color);
   }
   .general_price_head {
     width: 100%;
     display: flex;
     flex-direction: column;
     gap: 8px;
-  }
-  .price_line {
-    width: 100%;
-    height: 1px;
-    background: var(--text-color);
   }
   .general_price_includes {
     width: 100%;
@@ -1050,7 +1127,6 @@ export default {
     padding-left: 12px;
   }
   .general_price_includes ul li {
-    background-image: url("@/assets/images/Check.png");
     background-repeat: no-repeat;
     background-position: 0 center;
     background-size: 24px 24px;

@@ -7,15 +7,13 @@
           <img src="@/assets/images/цуввштп_шсщт%201.png" alt="icon">
           <div class="cost_number">
             <h3>567</h3>
-            <img src="@/assets/images/Element%2005.png" alt="icon">
           </div>
           <p>couples got married online and were not in the same country</p>
         </div>
         <div class="number">
           <img src="@/assets/images/saving-money.png" alt="icon">
           <div class="cost_number">
-            <h3>1000000$+</h3>
-            <img src="@/assets/images/Element%2005.png" alt="icon">
+            <h3>$1,000,000+</h3>
           </div>
           <p>that is how much couples saved and spent on a down payment on a house, paying off student debt, or a family vacation</p>
         </div>
@@ -23,7 +21,6 @@
           <img src="@/assets/images/people-rushing.png" alt="icon">
           <div class="cost_number">
             <h3>1000+</h3>
-            <img src="@/assets/images/Element%2005.png" alt="icon">
           </div>
           <p>hours were saved instead of spent on solving wedding dilemmas and conversations with wedding vendors</p>
         </div>
@@ -31,7 +28,6 @@
           <img src="@/assets/images/certificate.png" alt="icon">
           <div class="cost_number">
             <h3>100%</h3>
-            <img src="@/assets/images/Element%2005.png" alt="icon">
           </div>
           <p>online process from getting the marriage license to receiving marriage certificate</p>
         </div>
@@ -94,6 +90,7 @@ export default {
   padding: 40px 0;
   justify-content: center;
   align-items: center;
+  background: var(--back-yellow);
 }
 .cases_main {
   width: 1280px;
@@ -101,6 +98,10 @@ export default {
   flex-direction: column;
   gap: 80px;
   align-items: center;
+}
+.cases_main h3 {
+  width: 60%;
+  text-align: center;
 }
 .number_block {
   width: 100%;
@@ -113,13 +114,16 @@ export default {
   display: flex;
   flex-direction: column;
   align-items: center;
-  gap: 16px;
-  background: var(--shape-color);
-  border-radius: 12px;
-  border: 2px solid #fff;
-  box-shadow: 0 4px 12px 0 rgba(0, 0, 0, 0.2);
-  box-sizing: border-box;
-  padding: 12px;
+  gap: 0px;
+  //background: var(--shape-color);
+  //border-radius: 12px;
+  //border: 2px solid #fff;
+  //box-shadow: 0 4px 12px 0 rgba(0, 0, 0, 0.2);
+  //box-sizing: border-box;
+  //padding: 12px;
+}
+.number p {
+  text-align: center;
 }
 .cost_number {
   width: 100%;
@@ -234,22 +238,30 @@ export default {
     flex-direction: row;
     align-items: center;
     gap: 16px;
-    background: var(--shape-color);
-    border-radius: 12px;
-    border: 2px solid #fff;
-    box-shadow: 0 4px 12px 0 rgba(0, 0, 0, 0.2);
-    box-sizing: border-box;
-    padding: 12px;
+    //background: var(--shape-color);
+    //border-radius: 12px;
+    //border: 2px solid #fff;
+    //box-shadow: 0 4px 12px 0 rgba(0, 0, 0, 0.2);
+    //box-sizing: border-box;
+    //padding: 12px;
   }
   .number img {
     width: 64px;
+  }
+  .number p {
+    text-align: right;
+
   }
   .cost_number {
     width: 100%;
     display: flex;
     flex-direction: column;
     gap: -12px;
-    align-items: center;
+    align-items: start;
+  }
+  .cost_number h3 {
+    font-size: 24px;
+    text-align: left;
   }
   .cases_in_picture {
     width: 100%;

@@ -7,6 +7,10 @@
     --text-color: #333333;
     --bg-color: #ffffff;
     --shape-color: #FFE691;
+    --gold: #B8860b;
+    --back-yellow: rgba(255, 230, 145, .1);
+    --yellow: #F2C231;
+    --blue: #37A1FF
 }
 html, body {
     background: var(--bg-color);
