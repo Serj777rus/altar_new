@@ -10,6 +10,7 @@
     "start": "nodemon server.js"
   },
   "dependencies": {
+    "@bitrix24/b24jssdk": "^0.1.6",
     "axios": "^1.7.7",
     "cors": "^2.8.5",
     "dotenv": "^16.4.7",

@@ -45,7 +45,7 @@ export default {
 .form_pop {
   width: 100%;
   height: 100vh;
-  display: flex;
+  display: flex !important;
   justify-content: center;
   align-items: center;
   background: rgba(10, 13, 18, .7);

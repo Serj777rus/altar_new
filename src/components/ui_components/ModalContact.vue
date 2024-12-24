@@ -29,7 +29,7 @@ export default {
 
 <style scoped>
 .modal {
-  width: 100%;
+  width: fit-content;
   display: flex;
   justify-content: center;
   align-items: center;
@@ -38,7 +38,8 @@ export default {
   box-sizing: border-box;
   position: fixed;
   bottom: -100%;
-  left: 0;
+  left: 50%;
+  transform: translateX(-50%);
   z-index: 1000;
   transition: all 1s ease;
 }
@@ -55,7 +56,7 @@ export default {
   padding: 24px 48px;
   border-radius: 48px;
   background: var(--shape-color);
-  box-shadow: 0px 4px 12px 0 rgba(0, 0, 0, 0.2);
+  box-shadow: 0 4px 12px 0 rgba(0, 0, 0, 0.2);
   position: relative;
 }
 .modal_container img {

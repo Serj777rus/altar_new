@@ -31,7 +31,7 @@ export default {
   position: fixed;
   bottom: 0;
   left: 0;
-  padding: 24px 0;
+  padding: 24px;
   transform: translateY(100%);
   transition: all 1s ease;
   z-index: 1000;
@@ -40,7 +40,7 @@ export default {
   transform: translateY(0%);
 }
 .cookie-banner-main {
-  width: 1280px;
+  width: 100%;
   display: flex;
   flex-direction: row;
   justify-content: center;
