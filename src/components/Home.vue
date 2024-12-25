@@ -94,7 +94,7 @@
         <div class="left_side_exellence_utps">
           <p>We’re not just another scam company offering online wedding services. Behind us lies a rich history that began in 2017 when our founder, Maksim, started officiating weddings in New York. When the pandemic hit, he took this passion online, helping couples celebrate their love despite the challenges. With years of experience and countless love stories behind us, we’re here to make your special day truly unforgettable.</p>
         </div>
-        <WhiteButton @click="PopUpActive = true"><slot>Contact Us</slot></WhiteButton>>
+        <WhiteButton @click="PopUpActive = true"><slot>Contact Us</slot></WhiteButton>
       </div>
       <div class="right_side_exellence">
         <img class="about_img" src="@/assets/images/Maksim.jpg" alt="icon">
