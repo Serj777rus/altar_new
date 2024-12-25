@@ -45,7 +45,7 @@ export default {
   methods: {
     async sendForm() {
       try {
-        const response = await axios.post('http://localhost:3000/sendForm', this.formData)
+        const response = await axios.post('api/sendForm', this.formData)
         if (response.status === 200) {
           this.message = response.data.id;
           this.formData = {

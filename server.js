@@ -19,7 +19,7 @@ app.post('/sendForm', async (req, res) => {
     console.log(first_name, phone);
     let data = {
         fields: {
-            NAME:first_name,
+            NAME: first_name,
             PHONE: [{'VALUE': phone, 'VALUE_TYPE': 'WORK'}],
         }
     }
