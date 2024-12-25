@@ -87,7 +87,8 @@ export default {
     box-sizing: border-box;
     position: fixed;
     bottom: -100%;
-    left: 0;
+    left: 50%;
+    transform: translateX(-50%);
     z-index: 1000;
     transition: all 1s ease;
   }
@@ -95,7 +96,7 @@ export default {
     bottom: 0;
   }
   .modal_container {
-    width: 100%;
+    width: fit-content;
     display: flex;
     flex-direction: row;
     justify-content: center;
