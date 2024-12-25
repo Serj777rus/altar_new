@@ -4,7 +4,7 @@
         <img src="@/assets/images/Featured_icon.png" alt="icon">
         <h6>Hi, send us your data</h6>
         <p>and we callback as soon as posible</p>
-        <form>
+        <form @submit.prevent="sendForm">
           <div class="form-group">
             <label for="first_name">Name</label>
             <input v-model="formData.first_name" type="text" name="first_name" id="first_name" placeholder="Inter your name" required>
@@ -18,6 +18,7 @@
             <p>You confirm that you have read and agree to the privacy policy</p>
           </div>
           <button type="submit" class="btn" :disabled="!btnDisabled">Submit</button>
+          <p v-if="message !== null" style="align-self: center; color: green; text-align: center">Thank you {{formData.first_name}}, your data is sended!</p>
         </form>
         <div class="close_pop" @click="$emit('close-pop', false)">+</div>
     </div>
@@ -25,6 +26,8 @@
 </template>
 
 <script>
+import axios from "axios";
+
 export default {
   props: {
     isActive: Boolean,
@@ -36,6 +39,28 @@ export default {
         phone: ''
       },
       btnDisabled: false,
+      message: null,
+    }
+  },
+  methods: {
+    async sendForm() {
+      try {
+        const response = await axios.post('http://localhost:3000/sendForm', this.formData)
+        if (response.status === 200) {
+          this.message = response.data.id;
+          this.formData = {
+            first_name: '',
+            phone: '',
+          }
+          setTimeout(() => {
+            this.$emit('close-pop', false);
+            this.message = null;
+
+            }, 1000)
+        }
+      } catch (error) {
+        console.log(error)
+      }
     }
   }
 }

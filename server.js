@@ -14,6 +14,30 @@ app.use(express.static('public'));
 const port =  3000;
 const server = http.createServer(app);
 
+app.post('/sendForm', async (req, res) => {
+    const { first_name, phone } = req.body;
+    console.log(first_name, phone);
+    let data = {
+        fields: {
+            NAME:first_name,
+            PHONE: [{'VALUE': phone, 'VALUE_TYPE': 'WORK'}],
+        }
+    }
+    try {
+        const response = await axios.post('https://b24-5h9cod.bitrix24.ru/rest/1/232bgqo9e62t37vi/crm.lead.add.json', data, {
+            headers: {
+                'Content-Type': 'application/json',
+                'Accept': 'application/json',
+            }
+        })
+        if (response.status === 200 && response.statusText === 'OK') {
+            res.status(200).json({id: response.data.result});
+        }
+    } catch (error) {
+        console.log(error);
+    }
+})
+
 app.get('/getData', async (req, res) => {
     console.log('Yes')
     try {

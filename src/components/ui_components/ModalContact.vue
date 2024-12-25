@@ -54,8 +54,9 @@ export default {
   align-items: center;
   gap: 24px;
   padding: 24px 48px;
-  border-radius: 48px;
-  background: var(--shape-color);
+  border-radius: 12px;
+  border: 2px solid #eaeaea;
+  background: #fff;
   box-shadow: 0 4px 12px 0 rgba(0, 0, 0, 0.2);
   position: relative;
 }
@@ -103,7 +104,7 @@ export default {
     padding: 12px 24px;
     border-radius: 48px;
     background: var(--shape-color);
-    box-shadow: 0px 4px 12px 0 rgba(0, 0, 0, 0.2);
+    box-shadow: 0 4px 12px 0 rgba(0, 0, 0, 0.2);
     position: relative;
   }
   .modal_container img {

@@ -5,7 +5,7 @@
         <img src="@/assets/images/logo.svg" alt="logo">
         <h2>ALTAR</h2>
       </div>
-      <BlacButton @click="$emit('open-pop', true)"><slot>Contact US</slot></BlacButton>
+      <BlacButton @click="$emit('open-pop', true)"><slot>Subscribe</slot></BlacButton>
     </div>
   </div>
 </template>

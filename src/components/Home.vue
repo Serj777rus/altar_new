@@ -7,7 +7,7 @@
           <h1>Get legally married online in US</h1>
           <h6>We've helped thousands of couples all around the world get their legal US marriage certificate available in 50 states of us and 123 countries.</h6>
           <div class="hero_btns">
-            <BlacButton @openContact="openModalCont"><slot>Get married</slot></BlacButton>
+            <BlacButton @openContact="openModalCont"><slot>Subscribe</slot></BlacButton>
             <WhiteButton @click="PopUpActive = true"><slot>Contact Us</slot></WhiteButton>
           </div>
           <div class="google_reviews">
@@ -94,7 +94,7 @@
         <div class="left_side_exellence_utps">
           <p>We’re not just another scam company offering online wedding services. Behind us lies a rich history that began in 2017 when our founder, Maksim, started officiating weddings in New York. When the pandemic hit, he took this passion online, helping couples celebrate their love despite the challenges. With years of experience and countless love stories behind us, we’re here to make your special day truly unforgettable.</p>
         </div>
-        <WhiteButton><slot>Contact US</slot></WhiteButton>
+        <WhiteButton @click="PopUpActive = true"><slot>Contact Us</slot></WhiteButton>>
       </div>
       <div class="right_side_exellence">
         <img class="about_img" src="@/assets/images/Maksim.jpg" alt="icon">
@@ -111,7 +111,7 @@
       <div class="left_side">
         <h3>Get your marriage certificate then standard from</h3>
         <h6>Receive a recognized certificate after the ceremony</h6>
-        <BlacButton><slot>Get Married</slot></BlacButton>
+        <WhiteButton @click="PopUpActive = true"><slot>Contact Us</slot></WhiteButton>
       </div>
       <div class="right_side">
         <img src="@/assets/images/real_certificate.jpg" alt="icon">
@@ -178,7 +178,7 @@
           </div>
         </div>
       </div>
-      <BlacButton><slot>Get Started</slot></BlacButton>
+      <WhiteButton @click="PopUpActive = true"><slot>Contact Us</slot></WhiteButton>
     </div>
   </div>
   <div class="faq">
@@ -464,57 +464,8 @@ export default {
 .utp p {
   font-weight: 500;
 }
-.second_block {
-  width: 100%;
-  display: flex;
-  padding: 40px 0;
-  box-sizing: border-box;
-  justify-content: center;
-  align-items: center;
-}
-.second_block_main {
-  width: 1280px;
-  display: flex;
-  flex-direction: row;
-  align-items: center;
-  gap: 80px;
-}
-.second_block_left {
-  width: 100%;
-  gap: 32px;
-  display: flex;
-  flex-direction: column;
-}
-.second_left_text {
-  width: 100%;
-  display: flex;
-  flex-direction: column;
-  gap: 24px;
-}
-.second_left_shape {
-  width: 100%;
-  display: flex;
-  flex-direction: row;
-  gap: 24px;
-}
-.shape {
-  box-sizing: border-box;
-  padding: 12px;
-  gap: 16px;
-  display: flex;
-  flex-direction: column;
-  border-radius: 12px;
-  background: var(--shape-color);
-  border: 2px solid #fff;
-  width: 100%;
-  box-shadow: 0 4px 12px 0 rgba(0, 0, 0, 0.2);
-}
 .shape img {
   width: 64px;
-}
-.second_block_right {
-  width: 100%;
-  display: flex;
 }
 .second_block_right img {
   width: 100%;
