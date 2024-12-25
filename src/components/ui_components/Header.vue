@@ -50,7 +50,7 @@ export default {
 @media all and (max-width: 550px) {
   .header {
     box-sizing: border-box;
-    padding: 0 10px;
+    padding: 40px 10px;
   }
 }
 </style>
