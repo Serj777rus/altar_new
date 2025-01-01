@@ -5,6 +5,7 @@ import App from './App.vue'
 import { createRouter, createWebHashHistory } from "vue-router";
 import Home from "./components/Home.vue";
 import NewsPage from "@/components/NewsPage.vue";
+import AboutUs from "@/components/AboutUs.vue";
 
 const router = createRouter({
     routes: [
@@ -17,6 +18,11 @@ const router = createRouter({
             path: '/news',
             component: NewsPage,
             name: 'News',
+        },
+        {
+            path: '/about',
+            component: AboutUs,
+            name: 'AboutUs',
         }
     ],
     history: createWebHashHistory(),

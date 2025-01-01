@@ -94,7 +94,7 @@
         <div class="left_side_exellence_utps">
           <p>We’re not just another scam company offering online wedding services. Behind us lies a rich history that began in 2017 when our founder, Maksim, started officiating weddings in New York. When the pandemic hit, he took this passion online, helping couples celebrate their love despite the challenges. With years of experience and countless love stories behind us, we’re here to make your special day truly unforgettable.</p>
         </div>
-        <WhiteButton @click="PopUpActive = true"><slot>Contact Us</slot></WhiteButton>
+        <WhiteButton @click="$router.push('/about')"><slot>Read More</slot></WhiteButton>
       </div>
       <div class="right_side_exellence">
         <img class="about_img" src="@/assets/images/Maksim.jpg" alt="icon">
@@ -230,7 +230,13 @@ import ModalContact from "@/components/ui_components/ModalContact.vue";
 import CookieBanner from "@/components/ui_components/CookieBanner.vue";
 import RewievsPage from "@/components/ui_components/RewievsPage.vue";
 import axios from "axios";
+import AboutUs from "@/components/AboutUs.vue";
 export default {
+  computed: {
+    AboutUs() {
+      return AboutUs
+    }
+  },
   components: {Header, BlacButton, WhiteButton, Video, Services, Steps, TableBlock, Cases, ScrollText, Footer, PopUp, StepTwo, ModalContact, CookieBanner, RewievsPage},
   data() {
     return {
