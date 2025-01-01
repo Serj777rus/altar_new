@@ -1,7 +1,7 @@
 <template>
   <div class="header">
     <div class="header_main">
-      <div class="header_logo">
+      <div class="header_logo" @click="$router.push('/')">
         <img src="@/assets/images/logo.svg" alt="logo">
         <h2>ALTAR</h2>
       </div>
@@ -23,7 +23,7 @@ export default {
   display: flex;
   justify-content: center;
   align-items: center;
-  padding-top: 48px;
+  padding: 24px 0;
   background: var(--back-yellow);
 }
 .header_main {
@@ -38,6 +38,7 @@ export default {
   flex-direction: row;
   align-items: center;
   gap: 24px;
+  cursor: pointer;
 }
 .header_logo img {
   width: 48px;
