@@ -51,7 +51,16 @@ export default {
 @media all and (max-width: 550px) {
   .header {
     box-sizing: border-box;
-    padding: 40px 10px;
+    padding: 20px 10px;
+  }
+  .header_logo h2{
+    font-size: 24px;
+  }
+  .header_logo img {
+    width: 32px;
+  }
+  .header_logo {
+    gap: 4px;
   }
 }
 </style>

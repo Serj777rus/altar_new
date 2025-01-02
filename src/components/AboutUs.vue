@@ -45,12 +45,15 @@
         <div class="right_side_2020">
           <img src="@/assets/images/2020.jpg" alt="icon">
           <img src="@/assets/images/about_hero.jpg" alt="icon">
+          <img src="@/assets/images/2020-4.jpg" alt="icon">
+          <img src="@/assets/images/2020-5.jpg" alt="icon">
         </div>
       </div>
       <div class="history">
         <div class="right_side_2020_next">
           <img src="@/assets/images/2020-1.jpg" alt="icon">
           <img src="@/assets/images/2020-2.jpg" alt="icon">
+          <img src="@/assets/images/2020-6.jpg" alt="icon">
         </div>
         <div class="left_side_2020">
           <p>By the way, about online wedding ceremonies
@@ -68,6 +71,13 @@
         </div>
       </div>
       <div class="history">
+        <div class="left_side_2021">
+          <img src="@/assets/images/2024.jpg" alt="icon">
+          <img src="@/assets/images/2024-1.jpg" alt="icon">
+          <img src="@/assets/images/2024-2.jpg" alt="icon">
+          <img src="@/assets/images/2024-3.jpg" alt="icon">
+          <img src="@/assets/images/2024-4.jpg" alt="icon">
+        </div>
         <div class="right_side_2021">
           <h2>2021-2024</h2>
           <p>In 2021, when the pandemic ended, New York State authorities banned couples from marrying online.
@@ -208,26 +218,28 @@ export default {
 .right_side_2020 {
   width: 100%;
   display: flex;
-  flex-direction: column;
+  flex-direction: row;
+  flex-wrap: wrap;
+  gap: 16px;
 }
 .right_side_2020 img {
-  width: 60%;
+  width: 40%;
+  object-fit: cover;
   border-radius: 8px;
 }
-.right_side_2020 img:nth-child(1) {
-  transform: translate(-12px, -12px) rotate(-6deg);
-}
-.right_side_2020 img:nth-child(2) {
-  transform: translate(40%, -12px) rotate(6deg);
-}
+
 .right_side_2020_next {
   display: flex;
   flex-direction: row;
+  justify-content: center;
+  flex-wrap: wrap;
   width: 100%;
   gap: 16px;
 }
 .right_side_2020_next img {
-  width: calc(50% - 8px);
+  width: 40%;
+  max-height: 200px;
+  object-fit: cover;
   border-radius: 8px;
 }
 .right_side_2020_final {
@@ -237,6 +249,20 @@ export default {
 .right_side_2020_final img {
   width: 100%;
   border-radius: 8px;
+}
+.left_side_2021 {
+  width: 100%;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  gap: 16px;
+  flex-wrap: wrap;
+}
+.left_side_2021 img {
+  width: 40%;
+  border-radius: 8px;
+  object-fit: contain;
 }
 .right_side_2021 {
   width: 100%;
@@ -261,5 +287,120 @@ export default {
   box-sizing: border-box;
   padding-left: 24px;
   border-left: 4px solid var(--blue);
+}
+@media all and (max-width: 500px) {
+  .about_hero_main {
+    width: 100%;
+    height: 25vh;
+    display: flex;
+    background-image: url("../assets/images/about_hero.jpg");
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: 100% auto;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+  }
+  .about_main {
+    width: 100%;
+  }
+  .about_hero_main h2 {
+    font-size: 32px;
+  }
+  .about_hero_main h6 {
+    font-size: 14px;
+  }
+  .about_hero {
+    padding: 0 10px 20px 10px;
+  }
+  .history {
+    width: 100%;
+    flex-direction: column;
+    gap: 32px;
+    padding: 24px 0;
+  }
+  .left_side {
+    gap: 16px;
+  }
+  .left_side h2 {
+    text-align: center;
+  }
+  .right_side {
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+    gap: 16px;
+  }
+  .right_side img {
+    position: relative;
+    transform: none !important;
+    width: calc(50% - 8px);
+  }
+  .right_side_2017 {
+    order: 1;
+    gap: 16px;
+  }
+  .right_side_2017 h2 {
+    text-align: center;
+    width: 100%;
+  }
+  .left_side_2017 {
+    order: 2;
+  }
+  .left_side_2020 {
+    gap: 16px;
+  }
+  .left_side_2020 h2 {
+    text-align: center;
+    width: 100%;
+  }
+  .right_side_2020 img {
+    width: calc(50% - 8px);
+  }
+  .right_side_2020_next {
+    order: 2;
+  }
+  .right_side_2020_next img {
+    width: calc(50% - 8px);
+  }
+  .left_side_2021 {
+    order: 2;
+  }
+  .left_side_2021 img {
+    width: calc(50% - 8px);
+  }
+  .right_side_2021 {
+    gap: 16px;
+  }
+  .right_side_2021 h2 {
+    text-align: center;
+    width: 100%;
+  }
+  .right_side_2024 {
+    gap: 16px;
+  }
+  .right_side_2024 h2 {
+    text-align: center;
+    width: 100%;
+  }
+}
+@media all and (max-width: 370px) {
+  .about_main {
+    width: 100%;
+    gap: 16px;
+  }
+  .about_hero_main h2 {
+    font-size: 24px;
+  }
+  .about_hero_main h6 {
+    font-size: 14px;
+    text-align: center;
+  }
+  .history {
+    padding: 12px 0;
+  }
+  h2 {
+    font-size: 48px;
+  }
 }
 </style>
