@@ -75,7 +75,8 @@ export default {
   margin-bottom: 24px;
   position: sticky;
   top: 80px;
-  justify-content: space-between;
+  column-gap: 24px;
+  justify-content: start;
   row-gap: 8px;
   align-items: center;
   box-sizing: border-box;

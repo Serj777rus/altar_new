@@ -4,8 +4,8 @@
     <div class="hero_main">
       <div class="hero_content">
         <div class="hero_left_side">
-          <h1>Get legally married online in US</h1>
-          <h6>We've helped thousands of couples all around the world get their legal US marriage certificate available in 50 states of us and 123 countries.</h6>
+          <h1>Get Legally Married Online</h1>
+          <h6>We've helped thousands of couples all around the world get their legal US marriage certificate available in 50 states of the USA and 148 countries</h6>
           <div class="hero_btns">
             <BlacButton @openContact="openModalCont"><slot>Subscribe</slot></BlacButton>
             <WhiteButton @click="PopUpActive = true"><slot>Contact Us</slot></WhiteButton>
@@ -22,10 +22,10 @@
               <p>2000+ couple</p>
             </div>
             <div class="utp">
-              <p>from 37 countries</p>
+              <p>100% Legal under U.S. Law</p>
             </div>
             <div class="utp">
-              <p>100% online</p>
+              <p>50 states and 148 countries available</p>
             </div>
           </div>
         </div>
@@ -97,6 +97,7 @@
         <WhiteButton @click="$router.push('/about')"><slot>Read More</slot></WhiteButton>
       </div>
       <div class="right_side_exellence">
+        <img class="about_img" src="@/assets/images/abioutus.49.jpg" alt="icon">
         <img class="about_img" src="@/assets/images/Maksim.jpg" alt="icon">
         <img class="about_img" src="@/assets/images/photo_2024-12-22%2012.05.37.jpeg" alt="icon">
         <img class="about_img" src="@/assets/images/photo_2024-12-22%2012.05.41.jpeg" alt="icon">
@@ -468,7 +469,9 @@ export default {
   border-radius: 16px;
 }
 .utp p {
-  font-weight: 500;
+  font-weight: 400;
+  text-align: center;
+  font-size: 16px;
 }
 .shape img {
   width: 64px;
