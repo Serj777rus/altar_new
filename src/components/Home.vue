@@ -86,7 +86,7 @@
 <!--      </div>-->
 <!--    </div>-->
 <!--  </div>-->
-  <div class="exellence_block">
+  <div class="exellence_block" id="aboutUs">
     <div class="exellence_main">
       <div class="left_side_exellence">
         <h3>About US</h3>
@@ -97,12 +97,15 @@
         <WhiteButton @click="$router.push('/about')"><slot>Read More</slot></WhiteButton>
       </div>
       <div class="right_side_exellence">
-        <img class="about_img" src="@/assets/images/abioutus.49.jpg" alt="icon">
-        <img class="about_img" src="@/assets/images/Maksim.jpg" alt="icon">
-        <img class="about_img" src="@/assets/images/photo_2024-12-22%2012.05.37.jpeg" alt="icon">
-        <img class="about_img" src="@/assets/images/photo_2024-12-22%2012.05.41.jpeg" alt="icon">
-        <img class="tab_left" @click="prewPhoto" src="@/assets/images/Linear%20Icons.svg" alt="icon">
-        <img class="tab_right" @click="nextPhoto" src="@/assets/images/Linear%20Icons.svg" alt="icon">
+        <div class="image_block">
+          <img class="about_img" src="@/assets/images/abioutus.49.jpg" alt="icon">
+          <img class="about_img" src="@/assets/images/Maksim.jpg" alt="icon">
+          <img class="about_img" src="@/assets/images/photo_2024-12-22%2012.05.37.jpeg" alt="icon">
+          <img class="about_img" src="@/assets/images/photo_2024-12-22%2012.05.41.jpeg" alt="icon">
+        </div>
+        <div class="tabs_aboutus">
+          <div class="tab" v-for="(tab, index) in aboutPhotoArr" :key="index" @click="changePhotoAbout(index)"></div>
+        </div>
       </div>
     </div>
   </div>
@@ -132,7 +135,7 @@
           <div class="price_shape">
             <div class="general_price_head">
               <h5>The Base Package</h5>
-              <h2>$500</h2>
+              <h2>$497</h2>
             </div>
             <div class="general_price_includes">
               <ul>
@@ -303,7 +306,8 @@ export default {
       videoProps: [],
       casesProps: [],
       reviewsProps: [],
-      servicesProps: []
+      servicesProps: [],
+      aboutPhotoArr: []
     }
   },
   methods: {
@@ -356,37 +360,22 @@ export default {
         this.cookies = true;
       }, 2000)
     },
-    nextPhoto() {
+    changePhotoAbout(indexTab) {
       let images = document.querySelectorAll('.about_img');
-      let currentIndex = -1;
       images.forEach((image, index) => {
-        if (image.classList.contains('active')) {
-          currentIndex = index;
-          image.classList.remove('active'); // Удалить класс у текущего
+        if (index === indexTab) {
+          image.classList.add('active');
         }
-      });
-      let nextIndex = (currentIndex + 1) % images.length;
-      images[nextIndex].classList.add('active');
-    },
-    prewPhoto() {
-      let images = document.querySelectorAll('.about_img');
-      let currentIndex = -1;
-      images.forEach((image, index) => {
-        if (image.classList.contains('active')) {
-          currentIndex = index;
-          image.classList.remove('active'); // Удалить класс у текущего
+        if (index !== indexTab) {
+          image.classList.remove('active');
         }
-      });
-      let nextIndex = (currentIndex - 1) % images.length;
-      if (nextIndex < 0) {
-        nextIndex = images.length - 1;
-      }
-      images[nextIndex].classList.add('active');
+      })
     }
   },
   async mounted() {
     this.cookiesData();
     await this.getData();
+    this.aboutPhotoArr = document.querySelectorAll('.about_img');
     document.querySelector('.about_img').classList.add('active');
   },
   watch: {
@@ -575,7 +564,15 @@ export default {
 .right_side_exellence {
   width: 100%;
   display: flex;
-  flex-direction: row;
+  flex-direction: column;
+  overflow: hidden;
+  position: relative;
+  gap: 16px;
+}
+.image_block {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
   overflow: hidden;
   position: relative;
 }
@@ -585,6 +582,20 @@ export default {
   border-radius: 16px;
   opacity: 0;
   display: none;
+}
+.tabs_aboutus {
+  width: 100%;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  gap: 8px;
+}
+.tab {
+  width: 12px;
+  height: 12px;
+  border-radius: 50%;
+  background: var(--shape-color);
 }
 .active {
   opacity: 1;

@@ -8,7 +8,6 @@
           <div class="links">
             <p>About Us</p>
             <p>Contact Us</p>
-            <p>Support Center</p>
             <p>Blog Posts</p>
             <p>FAQs</p>
           </div>
@@ -49,7 +48,6 @@
         <p>© 2024 ALTAR. All rights reserved.</p>
         <p>Privacy Policy</p>
         <p>Terms of Service</p>
-        <p>Cookie Settings</p>
       </div>
       <div class="socials">
         <img src="@/assets/images/Facebook.png" alt="logo" />

@@ -10,8 +10,12 @@
             <input v-model="formData.first_name" type="text" name="first_name" id="first_name" placeholder="Inter your name" required>
           </div>
           <div class="form-group">
-            <label for="phone">Name</label>
+            <label for="phone">Phone</label>
             <input v-model="formData.phone" type="text" name="phone" id="phone" placeholder="Inter your phone number" required>
+          </div>
+          <div class="form-group">
+            <label for="phone">Email</label>
+            <input v-model="formData.email" type="text" name="email" id="email" placeholder="Inter your Email" required>
           </div>
           <div class="check-group">
             <input type="checkbox" name="check" id="check" @click="btnDisabled = !btnDisabled">
@@ -36,7 +40,8 @@ export default {
     return {
       formData: {
         first_name: '',
-        phone: ''
+        phone: '',
+        email: ''
       },
       btnDisabled: false,
       message: null,
@@ -51,6 +56,7 @@ export default {
           this.formData = {
             first_name: '',
             phone: '',
+            email: ''
           }
           setTimeout(() => {
             this.$emit('close-pop', false);

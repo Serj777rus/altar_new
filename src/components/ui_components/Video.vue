@@ -13,6 +13,17 @@
           <img class="poster" :class="{active: isActiveVideo === video.id}" :src="`${mediaUrl}${video.cover.url}`" alt="poster"/>
         </div>
       </div>
+      <div class="hero_utp">
+        <div class="utp">
+          <p>100% online</p>
+        </div>
+        <div class="utp">
+          <p>2 days average from I do to marriage</p>
+        </div>
+        <div class="utp">
+          <p>Less then 1 hour to create marriage license</p>
+        </div>
+      </div>
 <!--      <WhiteButton><slot>View All</slot></WhiteButton>-->
     </div>
   </div>
@@ -131,6 +142,24 @@ export default {
 .active {
   opacity: 0;
 }
+.hero_utp {
+  width: 100%;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  gap: 16px;
+}
+.utp {
+  box-sizing: border-box;
+  padding: 8px 18px;
+  background: var(--shape-color);
+  border-radius: 16px;
+}
+.utp p {
+  font-weight: 400;
+  text-align: center;
+  font-size: 16px;
+}
 @media all and (max-width: 550px) {
   .video-container {
     display: flex;
@@ -173,6 +202,25 @@ export default {
   .video video {
     width: 100%;
     border-radius: 12px;
+  }
+  .hero_utp {
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    gap: 16px;
+    flex-wrap: wrap;
+  }
+  .utp {
+    box-sizing: border-box;
+    padding: 8px 18px;
+    background: var(--shape-color);
+    border-radius: 16px;
+  }
+  .utp p {
+    font-weight: 400;
+    text-align: center;
+    font-size: 16px;
   }
 }
 </style>

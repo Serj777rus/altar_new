@@ -15,7 +15,7 @@ const port =  3000;
 const server = http.createServer(app);
 
 app.post('/sendForm', async (req, res) => {
-    const { first_name, phone } = req.body;
+    const { first_name, phone, email } = req.body;
     console.log(first_name, phone);
     let data = {
         fields: {
