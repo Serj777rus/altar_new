@@ -174,6 +174,11 @@ export default {
   background: rgba(255, 255, 255, 0.2);
   backdrop-filter: blur(6px);
 }
+.text_case:nth-child(2) h3 {
+  width: 100% !important;
+  font-size: 24px;
+  text-align: start;
+}
 .text_case:nth-child(3) {
   top: 10%;
   right: 24px;
@@ -187,6 +192,7 @@ export default {
 }
 .cost_money {
   color: #fff;
+  width: 100% !important;
 }
 .cost_time {
   color: #fff;
@@ -306,7 +312,7 @@ export default {
     backdrop-filter: blur(6px);
   }
   .text_case:nth-child(2) h3 {
-    font-size: 14px;
+    font-size: 12px;
     font-weight: 500;
   }
   .text_case:nth-child(3) {
@@ -314,10 +320,12 @@ export default {
     right: 12px;
   }
   .text_case:nth-child(3) h3 {
-    font-size: 20px;
+    font-size: 16px;
+    text-align: right;
   }
   .text_case:nth-child(4) h3 {
-    font-size: 20px;
+    font-size: 16px;
+    text-align: right;
   }
   .text_case:nth-child(4) {
     top: 25%;
@@ -327,7 +335,7 @@ export default {
     color: #fff;
   }
   .cost_money {
-    color: #fff;
+    color: #fff !important;
   }
   .cost_time {
     color: #fff;

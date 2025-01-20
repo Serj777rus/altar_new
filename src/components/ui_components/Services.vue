@@ -82,7 +82,7 @@ export default {
 .service {
   width: 100%;
   position: relative;
-  height: 320px;
+  height: 420px;
 }
 .service_card {
   width: 100%;
@@ -152,15 +152,15 @@ export default {
   width: fit-content;
   display: flex;
   flex-direction: row;
-  gap: 12px;
+  gap: 4px;
   justify-content: center;
   box-sizing: border-box;
-  padding: 8px;
+  padding: 4px;
   border-radius: 12px;
   background: var(--shape-color);
 }
 .tab {
-  height: 96px;
+  height: 84px;
   position: relative;
 }
 .tab img {
@@ -180,6 +180,7 @@ export default {
   color: #fff;
   text-align: center;
   cursor: pointer;
+  font-size: 14px;
 }
 @media all and (max-width: 550px) {
   .services {
@@ -203,7 +204,7 @@ export default {
   .service {
     width: 100%;
     position: relative;
-    height: 640px;
+    height: 800px;
     order: 3
   }
   .service_card {
@@ -265,16 +266,16 @@ export default {
     width: fit-content;
     display: flex;
     flex-direction: row;
-    gap: 12px;
+    gap: 4px;
     justify-content: center;
     box-sizing: border-box;
-    padding: 8px;
+    padding: 4px;
     border-radius: 12px;
     background: var(--shape-color);
     order: 2;
   }
   .tab {
-    height: 72px;
+    height: 56px;
     position: relative;
   }
   .tab img {
@@ -294,6 +295,7 @@ export default {
     color: #fff;
     text-align: center;
     cursor: pointer;
+    font-size: 10px;
   }
 }
 </style>

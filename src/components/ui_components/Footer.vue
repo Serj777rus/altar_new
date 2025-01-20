@@ -6,7 +6,8 @@
         <div class="links_block">
           <h6>Quick Links</h6>
           <div class="links">
-            <p>About Us</p>
+            <p @click="$router.push('/')">Home</p>
+            <p @click="$router.push('/about')">About Us</p>
             <p>Contact Us</p>
             <p>Blog Posts</p>
             <p>FAQs</p>
@@ -22,16 +23,16 @@
             <p>YouTube</p>
           </div>
         </div>
-        <div class="links_block">
-          <h6>Stay Updated</h6>
-          <div class="links">
-            <p>Email Alerts</p>
-            <p>New Features</p>
-            <p>Special Offers</p>
-            <p>Monthly News</p>
-            <p>Exclusive Content</p>
-          </div>
-        </div>
+<!--        <div class="links_block">-->
+<!--          <h6>Stay Updated</h6>-->
+<!--          <div class="links">-->
+<!--            <p>Email Alerts</p>-->
+<!--            <p>New Features</p>-->
+<!--            <p>Special Offers</p>-->
+<!--            <p>Monthly News</p>-->
+<!--            <p>Exclusive Content</p>-->
+<!--          </div>-->
+<!--        </div>-->
       </div>
       <div class="news_seller_footer">
         <h6>Join</h6>
@@ -79,6 +80,7 @@ export default {
   align-items: center;
   flex-direction: column;
   gap: 32px;
+  background: var(--shape-color);
 }
 .footer_main {
   width: 1280px;
@@ -87,7 +89,6 @@ export default {
   gap: 128px;
   box-sizing: border-box;
   padding: 48px;
-  background: var(--shape-color);
 }
 .links_footer {
   width: 100%;
