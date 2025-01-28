@@ -2,7 +2,7 @@ import './assets/main.css'
 
 import { createApp } from 'vue'
 import App from './App.vue'
-import { createRouter, createWebHashHistory } from "vue-router";
+import { createRouter, createWebHashHistory, createWebHistory } from "vue-router";
 import Home from "./components/Home.vue";
 import NewsPage from "@/components/NewsPage.vue";
 import AboutUs from "@/components/AboutUs.vue";
