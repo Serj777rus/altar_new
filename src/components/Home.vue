@@ -7,7 +7,7 @@
           <h1>Get Legally Married Online</h1>
           <h6>We've helped thousands of couples all around the world get their legal US marriage certificate available in 50 states of the USA and 148 countries</h6>
           <div class="hero_btns">
-            <BlacButton @openContact="openModalCont"><slot>Subscribe</slot></BlacButton>
+            <BlacButton @openContact="openModalCont"><slot>Book your wedding</slot></BlacButton>
             <WhiteButton @click="PopUpActive = true"><slot>Contact Us</slot></WhiteButton>
           </div>
           <div class="google_reviews">
@@ -128,7 +128,7 @@
     <div class="price_main">
       <div class="price_heead">
         <h3>Pricing Plans</h3>
-        <h6>Choose the perfect plan for your wedding ceremony.</h6>
+<!--        <h6>Choose the perfect plan for your wedding ceremony.</h6>-->
       </div>
       <div class="price_block">
         <div class="left_price_block">
@@ -156,27 +156,31 @@
         <div class="right_price_block">
           <div class="price_shape">
             <div class="general_price_head">
-              <h5>Add-Ons</h5>
+              <h5>Apostile Stamp</h5>
               <h2>$50</h2>
             </div>
             <div class="general_price_includes">
               <ul>
                 <li>100% Satisfaction Guarantee</li>
                 <li>Unlimited consultation leading up to your day</li>
+                <li>Allows the marriage certificate to be recognized internationally</li>
+                <li>We do not overcharge you for the apostile like others</li>
               </ul>
             </div>
           </div>
           <div class="price_line"></div>
           <div class="price_shape">
             <div class="general_price_head">
-              <h5>Add-Ons</h5>
-              <h2>$50</h2>
+              <h5>Shipping</h5>
+              <h2>$80</h2>
             </div>
             <div class="general_price_includes">
               <ul>
                 <li>100% Satisfaction Guarantee</li>
                 <li>Unlimited consultation leading up to your day</li>
                 <li>One Digital Copy of Marriage certificate</li>
+                <li>International shipping available</li>
+                <li>multiple shipping methods (e.g., standard, express)</li>
               </ul>
             </div>
           </div>

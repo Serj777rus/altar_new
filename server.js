@@ -39,7 +39,6 @@ app.post('/sendForm', async (req, res) => {
 })
 
 app.get('/getData', async (req, res) => {
-    console.log('Yes')
     try {
         const [responseVideo, responseReviews, responseCases, responseServises] = await Promise.all([
             await axios.get('http://localhost:1337/api/weddings?populate=*'),
