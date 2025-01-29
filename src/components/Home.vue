@@ -161,8 +161,6 @@
             </div>
             <div class="general_price_includes">
               <ul>
-                <li>100% Satisfaction Guarantee</li>
-                <li>Unlimited consultation leading up to your day</li>
                 <li>Allows the marriage certificate to be recognized internationally</li>
                 <li>We do not overcharge you for the apostile like others</li>
               </ul>
@@ -176,9 +174,6 @@
             </div>
             <div class="general_price_includes">
               <ul>
-                <li>100% Satisfaction Guarantee</li>
-                <li>Unlimited consultation leading up to your day</li>
-                <li>One Digital Copy of Marriage certificate</li>
                 <li>International shipping available</li>
                 <li>multiple shipping methods (e.g., standard, express)</li>
               </ul>
