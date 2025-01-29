@@ -8,7 +8,7 @@
           <div class="links">
             <p @click="$router.push('/')">Home</p>
             <p @click="$router.push('/about')">About Us</p>
-            <p>Contact Us</p>
+            <p @click="$router.push('/contact')">Contact Us</p>
             <p>Blog Posts</p>
             <p>FAQs</p>
           </div>
