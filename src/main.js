@@ -7,6 +7,7 @@ import Home from "./components/Home.vue";
 import NewsPage from "@/components/NewsPage.vue";
 import AboutUs from "@/components/AboutUs.vue";
 import ContactPage from "@/components/ContactPage.vue";
+import LoginPage from "@/components/Dashboard/LoginPage.vue";
 
 const router = createRouter({
     routes: [
@@ -29,6 +30,11 @@ const router = createRouter({
             path: '/contact',
             component: ContactPage,
             name: 'Contact',
+        },
+        {
+            path: '/login',
+            component: LoginPage,
+            name: 'Login',
         }
     ],
     history: createWebHistory(),
