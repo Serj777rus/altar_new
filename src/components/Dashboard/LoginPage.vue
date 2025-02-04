@@ -23,7 +23,8 @@ export default {
   display: flex;
   justify-content: center;
   align-items: center;
-  background: url("@/assets/dashboard/login_background.png") 100%;
+  background: url("@/assets/dashboard/login_background.png");
+  background-size: cover;
 }
 .main {
   width: 1280px;
