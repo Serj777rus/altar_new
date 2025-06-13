@@ -263,7 +263,7 @@ export default {
     transform: translateX(0);
   }
   .tabs {
-    width: fit-content;
+    width: 100%;
     display: flex;
     flex-direction: row;
     gap: 4px;
