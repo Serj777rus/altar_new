@@ -268,6 +268,7 @@ export default {
     flex-direction: row;
     gap: 4px;
     justify-content: center;
+    overflow: hidden;
     box-sizing: border-box;
     padding: 4px;
     border-radius: 12px;
