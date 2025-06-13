@@ -84,7 +84,10 @@ export default {
   },
   methods: {
     async getArticle() {
-      const res = await axios.post(`${this.apiBaseUrl}getPost`, {slug: this.slug});
+      const res = await axios.get(`${this.apiBaseUrl}getPost`, {
+        params: {
+          slug: this.slug
+        }});
       this.article = res.data.data[0];
       this.shareData.title = this.article.article
     },
