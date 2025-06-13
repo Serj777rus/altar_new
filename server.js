@@ -68,8 +68,10 @@ app.get('/getPosts', async (req, res) => {
 
 app.post('/getPost', async (req, res) => {
     const slug = req.body.slug;
+    console.log(slug);
     try {
         const response = await axios.get(`http://localhost:1337/api/posts/?filters[slug][$eq]=${slug}&populate=*`)
+        console.log(response.data);
         res.status(200).json(response.data);
     } catch (error) {
         console.log(error);
