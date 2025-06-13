@@ -109,6 +109,7 @@ export default {
     this.fileBaseUrl = inject("fileBaseUrl");
     this.apiBaseUrl = inject("apiBaseUrl");
     this.slug = this.$route.params.slug
+    console.log(this.slug)
     if (this.slug) {
       await this.getArticle();
       this.useHead.addHeadObjs({
