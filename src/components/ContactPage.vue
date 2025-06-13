@@ -35,10 +35,21 @@ import Header from "@/components/ui_components/Header.vue";
 import Footer from "@/components/ui_components/Footer.vue";
 import BlacButton from "@/components/ui_components/BlacButton.vue";
 export default {
+  inject: ['useHead'],
   components: {
     Header,
     Footer,
     BlacButton,
+  },
+  mounted() {
+    this.useHead.addHeadObjs({
+      title: "Contact US",
+      meta: [
+        {name: "description", content: 'Contact page ALTAR'},
+          {property: "og:title", content: 'Contact US'},
+          { property: 'og:description', content: 'Contact page ALTAR' },
+      ]
+    })
   }
 }
 </script>

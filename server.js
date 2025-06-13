@@ -45,8 +45,32 @@ app.get('/getData', async (req, res) => {
             await axios.get('http://localhost:1337/api/reviews'),
             await axios.get('http://localhost:1337/api/cases?populate=*'),
             await axios.get('http://localhost:1337/api/services?populate=*')
+            // await axios.get('https://admin.tryaltar.com/api/weddings?populate=*'),
+            // await axios.get('https://admin.tryaltar.com/api/reviews'),
+            // await axios.get('https://admin.tryaltar.com/api/cases?populate=*'),
+            // await axios.get('https://admin.tryaltar.com/api/services?populate=*')
         ])
         res.status(200).json({video: responseVideo.data, reviews: responseReviews.data, cases: responseCases.data, servises: responseServises.data});
+    } catch (error) {
+        console.log(error)
+    }
+})
+
+app.get('/getPosts', async (req, res) => {
+    try {
+        const response = await axios.get('http://localhost:1337/api/posts?populate=*');
+        console.log(response.data);
+        res.status(200).json(response.data);
+    }catch (error) {
+        console.log(error);
+    }
+})
+
+app.post('/getPost', async (req, res) => {
+    const slug = req.body.slug;
+    try {
+        const response = await axios.get(`http://localhost:1337/api/posts/?filters[slug][$eq]=${slug}&populate=*`)
+        res.status(200).json(response.data);
     } catch (error) {
         console.log(error);
     }

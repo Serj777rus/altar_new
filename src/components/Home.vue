@@ -234,12 +234,14 @@ import CookieBanner from "@/components/ui_components/CookieBanner.vue";
 import RewievsPage from "@/components/ui_components/RewievsPage.vue";
 import axios from "axios";
 import AboutUs from "@/components/AboutUs.vue";
+import {inject} from "vue";
 export default {
   computed: {
     AboutUs() {
       return AboutUs
     }
   },
+  inject: ["useHead"],
   components: {Header, BlacButton, WhiteButton, Video, Services, Steps, TableBlock, Cases, ScrollText, Footer, PopUp, StepTwo, ModalContact, CookieBanner, RewievsPage},
   data() {
     return {
@@ -306,7 +308,8 @@ export default {
       casesProps: [],
       reviewsProps: [],
       servicesProps: [],
-      aboutPhotoArr: []
+      aboutPhotoArr: [],
+      apiBaseUrl: null
     }
   },
   methods: {
@@ -319,7 +322,7 @@ export default {
     },
     async getData() {
       try {
-        const response = await axios.get('api/getData')
+        const response = await axios.get(`${this.apiBaseUrl}getData`)
         this.videoProps = response.data.video.data;
         this.casesProps = response.data.cases.data;
         this.reviewsProps = response.data.reviews.data;
@@ -372,10 +375,23 @@ export default {
     }
   },
   async mounted() {
+    this.apiBaseUrl = inject('apiBaseUrl')
     this.cookiesData();
     await this.getData();
     this.aboutPhotoArr = document.querySelectorAll('.about_img');
     document.querySelector('.about_img').classList.add('active');
+    this.useHead.addHeadObjs({
+      title: 'Online Wedding Ceremony – Get Legally Married Online',
+      meta: [
+        {name: 'description', content: 'legally get married online, virtual wedding ceremony, international platform, tie the knot online'},
+        {name: 'robots', content: "index, follow"},
+        {property: 'og:title', content: 'Online Wedding Ceremony – Get Legally Married Online' },
+        {property: 'og:description', content: 'legally get married online, virtual wedding ceremony, international platform, tie the knot online'}
+      ],
+      link: [
+        {rel: 'canonical', href: 'https://tryaltar.com'}
+      ]
+    })
   },
   watch: {
     cookiesStatus(newValue) {
@@ -674,11 +690,6 @@ export default {
   gap: 32px;
   box-sizing: border-box;
   align-items: start;
-  //padding: 32px;
-  //border: 2px solid #fff;
-  //border-radius: 32px;
-  //box-shadow: 0 4px 12px 0 rgba(0, 0, 0, 0.2);
-  //background: var(--shape-color);
 }
 .general_price_head {
   width: 100%;
@@ -1072,10 +1083,6 @@ export default {
     gap: 32px;
     box-sizing: border-box;
     padding: 32px;
-    //border: 2px solid #fff;
-    //border-radius: 32px;
-    //box-shadow: 0 4px 12px 0 rgba(0, 0, 0, 0.2);
-    //background: var(--shape-color);
   }
   .general_price_head {
     width: 100%;
