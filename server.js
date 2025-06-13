@@ -67,7 +67,7 @@ app.get('/getPosts', async (req, res) => {
 })
 
 app.get('/getPost', async (req, res) => {
-    const slug = req.query.slug;
+    const slug = req.params.slug;
     console.log(slug);
     try {
         const response = await axios.get(`http://localhost:1337/api/posts?filters[slug][$eq]=${slug}&populate=*`)
