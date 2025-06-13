@@ -59,7 +59,7 @@ const router = createRouter({
     }
 })
 const app = createApp(App)
-app.provide('apiBaseUrl', 'api/')
+app.provide('apiBaseUrl', 'https://tryaltar.com/api/')
 app.provide('fileBaseUrl', 'https://admin.tryaltar.com')
 app.use(router)
 const head = createHead()
