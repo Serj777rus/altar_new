@@ -1,31 +1,23 @@
 <template>
   <div class="services">
     <div class="services_main">
-      <h3>For Who?</h3>
+      <h3>All in one solution for all couples</h3>
       <div class="service">
-        <div class="service_card" v-for="service in services" :key="service.id" :class="{active: isActive === service.id}">
+        <div class="service_card" v-for="service in services" :key="service.id">
           <div class="left_side_card">
-<!--            <img v-if="service.image.mime === 'image/png'" :src="`${mediaUrl}${service.cover.url}`" alt="image">-->
             <video v-if="service.video.mime === 'video/mp4'" :src="`${mediaUrl}${service.video.url}`" autoplay muted loop playsinline webkit-playsinline preload="auto"></video>
-<!--            <div class="banner_image">{{ service.article }}</div>-->
           </div>
           <div class="right_side_card">
 <!--            <h6>Our Services</h6>-->
-            <h3>{{ service.name_service }}</h3>
+            <h4>{{ service.name_service }}</h4>
             <p>{{ service.description_service }}</p>
-            <h6>{{ service.article_service }}</h6>
-            <p>{{ service.article_advantages }}</p>
-            <ul>
-              <li v-for="advantage in service.advantages" :key="advantage.id">{{ advantage.advantage }}</li>
-            </ul>
-<!--            <WhiteButton><slot>Read more</slot></WhiteButton>-->
+<!--            <h6>{{ service.article_service }}</h6>-->
+<!--            <p>{{ service.article_advantages }}</p>-->
+<!--            <ul>-->
+<!--              <li v-for="advantage in service.advantages" :key="advantage.id">{{ advantage.advantage }}</li>-->
+<!--            </ul>-->
+            <WhiteButton><slot>Read more</slot></WhiteButton>
           </div>
-        </div>
-      </div>
-      <div class="tabs">
-        <div class="tab" v-for="tab in services" :key="tab.id" @click="isActive = tab.id">
-          <img :src="`${mediaUrl}${tab.cover.url}`" alt="image">
-          <p>{{ tab.name_service }}</p>
         </div>
       </div>
     </div>
@@ -65,7 +57,7 @@ export default {
   width: 100%;
   display: flex;
   box-sizing: border-box;
-  padding: 40px 0;
+  padding: 60px 0;
   justify-content: center;
   align-items: center;
 }
@@ -81,31 +73,26 @@ export default {
 }
 .service {
   width: 100%;
-  position: relative;
-  height: 420px;
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 32px;
+  row-gap: 64px;
 }
 .service_card {
   width: 100%;
   display: flex;
-  flex-direction: row;
-  gap: 80px;
-  align-items: start;
-  justify-content: center;
-  transform: translateX(-200%);
-  position: absolute;
-  top: 0;
-  left: 0;
-  transition: all 1s ease;
+  flex-direction: column;
+  gap: 32px;
+  padding: 32px;
+  border-radius: 12px;
+  -webkit-box-shadow: 0px 5px 10px 2px rgba(34, 60, 80, 0.2);
+  -moz-box-shadow: 0px 5px 10px 2px rgba(34, 60, 80, 0.2);
+  box-shadow: 0px 5px 10px 2px rgba(34, 60, 80, 0.2);
+  box-sizing: border-box;
 }
 .left_side_card {
   width: 100%;
   position: relative;
-}
-.left_side_card img {
-  max-width: 100%;
-  aspect-ratio: 1/1;
-  object-fit: cover;
-  border-radius: 12px;
 }
 .left_side_card video {
   max-width: 100%;
@@ -120,7 +107,7 @@ export default {
   gap: 24px;
   align-items: start;
 }
-.right_side_card h3 {
+.right_side_card h4 {
   color: var(--shape-color);
 }
 .right_side_card h6 {
@@ -145,43 +132,6 @@ export default {
   align-items: start;
   justify-content: start;
 }
-.active {
-  transform: translateX(0);
-}
-.tabs {
-  width: fit-content;
-  display: flex;
-  flex-direction: row;
-  gap: 4px;
-  justify-content: center;
-  box-sizing: border-box;
-  padding: 4px;
-  border-radius: 12px;
-  background: var(--shape-color);
-}
-.tab {
-  height: 84px;
-  position: relative;
-}
-.tab img {
-  height: 100%;
-  aspect-ratio: 1/1;
-  object-fit: cover;
-  border-radius: 8px;
-  filter: brightness(60%);
-  cursor: pointer;
-}
-.tab p {
-  position: absolute;
-  top: 50%;
-  left: 50%;
-  width: 100%;
-  transform: translate(-50%, -50%);
-  color: #fff;
-  text-align: center;
-  cursor: pointer;
-  font-size: 14px;
-}
 @media all and (max-width: 550px) {
   .services {
     width: 100%;
@@ -203,9 +153,8 @@ export default {
   }
   .service {
     width: 100%;
-    position: relative;
-    height: 800px;
-    order: 3
+    grid-template-columns: 1fr;
+    row-gap: 32px;
   }
   .service_card {
     width: 100%;
@@ -214,11 +163,6 @@ export default {
     gap: 16px;
     align-items: center;
     justify-content: center;
-    transform: translateX(-200%);
-    position: absolute;
-    top: 0;
-    left: 0;
-    transition: all 1s ease;
   }
   .left_side_card {
     width: 100%;

@@ -57,7 +57,7 @@ export default {
   display: flex;
   justify-content: center;
   /* align-items: center; */
-  padding: 40px 0;
+  padding: 60px 0;
   box-sizing: border-box;
 }
 .footer_div {

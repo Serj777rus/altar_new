@@ -111,7 +111,7 @@ export default {
   justify-content: center;
   align-items: center;
   box-sizing: border-box;
-  padding: 40px 0;
+  padding: 60px 0;
 }
 .reviews_container {
   width: 1280px;

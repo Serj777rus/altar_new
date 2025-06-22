@@ -6,11 +6,11 @@
 <!--        <h6>Experience the magic of online weddings with us.</h6>-->
       </div>
       <div class="videos">
-        <div class="video" v-for="video in videos" :key="video.id" @mouseover="playVideo(video.id)" @mouseleave="pauseVideo(video.id)">
-          <video :id="video.id" :src="`${mediaUrl}${video.video.url}`" muted loop playsinline></video>
+        <div class="video" v-for="video in videos" :key="video.id">
+          <video :id="video.id" :src="`${mediaUrl}${video.video.url}`" autoplay muted loop playsinline></video>
           <h4>{{ video.article }}</h4>
           <p>{{ video.description }}</p>
-          <img class="poster" :class="{active: isActiveVideo === video.id}" :src="`${mediaUrl}${video.cover.url}`" alt="poster"/>
+<!--          <img class="poster" :class="{active: isActiveVideo === video.id}" :src="`${mediaUrl}${video.cover.url}`" alt="poster"/>-->
         </div>
       </div>
       <div class="hero_utp">
@@ -70,7 +70,7 @@ export default {
   width: 100%;
   justify-content: center;
   align-items: center;
-  padding: 40px 0;
+  padding: 60px 0;
 }
 .video_main {
   width: 1280px;

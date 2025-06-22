@@ -15,7 +15,7 @@
       <img @click="isActiveMenu = true" src="@/assets/images/menu.svg" v-else alt="icon">
     </div>
   </div>
-  <div @click="isActiveMenu = false" v-if="size <= 550" class="side-menu" :class="{'active': isActiveMenu}">
+  <div @click="isActiveMenu = false" v-if="size < 550" class="side-menu" :class="{'active': isActiveMenu}">
     <div class="mobile-menu">
       <div class="header_logo" @click="$router.push('/')">
         <img src="@/assets/images/logo.svg" alt="logo">
@@ -49,7 +49,11 @@ export default {
   },
   mounted() {
     this.size = window.innerWidth;
-  }
+    window.addEventListener('resize', (event) => {
+      this.size = window.innerWidth;
+      console.log(window.innerWidth);
+    });
+  },
 }
 </script>
 
