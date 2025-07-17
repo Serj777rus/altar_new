@@ -60,7 +60,7 @@ const router = createRouter({
 })
 const app = createApp(App)
 app.provide('apiBaseUrl', 'https://tryaltar.com/api/')
-// app.provide('apiBaseUrl', 'http://192.168.31.68:3000/')
+// app.provide('apiBaseUrl', 'http://192.168.31.233:3000/')
 app.provide('fileBaseUrl', 'https://admin.tryaltar.com')
 app.use(router)
 const head = createHead()

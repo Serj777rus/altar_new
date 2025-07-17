@@ -1,4 +1,5 @@
 <template>
+  <Banner></Banner>
   <Header @open-pop="PopUpActive = true"></Header>
   <div class="hero">
     <div class="hero_main">
@@ -187,6 +188,7 @@ import StepTwo  from "@/components/ui_components/StepTwo.vue"
 import ModalContact from "@/components/ui_components/ModalContact.vue";
 import CookieBanner from "@/components/ui_components/CookieBanner.vue";
 import RewievsPage from "@/components/ui_components/RewievsPage.vue";
+import Banner from "@/components/ui_components/Banner.vue";
 import axios from "axios";
 import AboutUs from "@/components/AboutUs.vue";
 import {inject} from "vue";
@@ -197,7 +199,7 @@ export default {
     }
   },
   inject: ["useHead"],
-  components: {Header, BlacButton, WhiteButton, Video, Services, Steps, TableBlock, Cases, ScrollText, Footer, PopUp, StepTwo, ModalContact, CookieBanner, RewievsPage},
+  components: {Banner, Header, BlacButton, WhiteButton, Video, Services, Steps, TableBlock, Cases, ScrollText, Footer, PopUp, StepTwo, ModalContact, CookieBanner, RewievsPage},
   data() {
     return {
       faq: [

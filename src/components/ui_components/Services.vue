@@ -5,7 +5,7 @@
       <div class="service">
         <div class="service_card" v-for="service in services" :key="service.id">
           <div class="left_side_card">
-            <video v-if="service.video.mime === 'video/mp4'" :src="`${mediaUrl}${service.video.url}`" autoplay muted loop playsinline webkit-playsinline preload="auto"></video>
+            <video v-if="service.video.mime === 'video/mp4' || service.video.mime === 'video/webm'" :src="`${mediaUrl}${service.video.url}`" autoplay muted loop playsinline webkit-playsinline preload="auto"></video>
           </div>
           <div class="right_side_card">
 <!--            <h6>Our Services</h6>-->
@@ -69,25 +69,26 @@ export default {
   align-items: start;
 }
 .services_main h3 {
+  width: 100%;
   text-align: center;
 }
 .service {
   width: 100%;
   display: grid;
   grid-template-columns: repeat(3, 1fr);
-  gap: 32px;
-  row-gap: 64px;
+  column-gap: 32px;
+  row-gap: 32px;
 }
 .service_card {
   width: 100%;
   display: flex;
   flex-direction: column;
-  gap: 32px;
-  padding: 32px;
-  border-radius: 12px;
-  -webkit-box-shadow: 0px 5px 10px 2px rgba(34, 60, 80, 0.2);
-  -moz-box-shadow: 0px 5px 10px 2px rgba(34, 60, 80, 0.2);
-  box-shadow: 0px 5px 10px 2px rgba(34, 60, 80, 0.2);
+  gap: 16px;
+  padding: 0;
+  //border-radius: 12px;
+  //-webkit-box-shadow: 0px 5px 10px 2px rgba(34, 60, 80, 0.2);
+  //-moz-box-shadow: 0px 5px 10px 2px rgba(34, 60, 80, 0.2);
+  //box-shadow: 0px 5px 10px 2px rgba(34, 60, 80, 0.2);
   box-sizing: border-box;
 }
 .left_side_card {
@@ -96,7 +97,7 @@ export default {
 }
 .left_side_card video {
   max-width: 100%;
-  aspect-ratio: 16/9;
+  aspect-ratio: 5/4;
   object-fit: cover;
   border-radius: 12px;
 }
